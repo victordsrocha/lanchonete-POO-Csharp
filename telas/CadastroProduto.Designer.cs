@@ -81,6 +81,7 @@
             // 
             this.codigoCadastro_textBox.Location = new System.Drawing.Point(64, 42);
             this.codigoCadastro_textBox.Name = "codigoCadastro_textBox";
+            this.codigoCadastro_textBox.ReadOnly = true;
             this.codigoCadastro_textBox.Size = new System.Drawing.Size(231, 20);
             this.codigoCadastro_textBox.TabIndex = 4;
             // 

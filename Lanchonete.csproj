@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auxiliar.cs" />
     <Compile Include="cardapio\Bebida.cs" />
     <Compile Include="cardapio\Lanche.cs" />
     <Compile Include="cardapio\Refeicao.cs" />

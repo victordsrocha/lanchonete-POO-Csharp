@@ -21,6 +21,7 @@ namespace Lanchonete.telas {
 
         private void CadastroProduto_Load(object sender, EventArgs e) {
             categoriaCadastro_textBox.Text = categoriaCadastro;
+            codigoCadastro_textBox.Text = Convert.ToString(Auxiliar.defineCodigo(categoriaCadastro));
         }
 
         private void okBotaoCadastro_Click(object sender, EventArgs e) {
@@ -57,6 +58,8 @@ namespace Lanchonete.telas {
             }
             this.Close();
 
+
+            
         }
     }
 }
