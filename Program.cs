@@ -13,7 +13,7 @@ namespace Lanchonete {
         /// 
 
         public static List<Cliente> listaClientes = new List<Cliente>();
-
+        public static List<Entregador> listaEntregadores = new List<Entregador>();
         public static List<ItemCardapio> listaLanche = new List<ItemCardapio>();
         public static List<ItemCardapio> listaRefeicao = new List<ItemCardapio>();
         public static List<ItemCardapio> listaBebida = new List<ItemCardapio>();
@@ -21,9 +21,13 @@ namespace Lanchonete {
 
         [STAThread]
         static void Main() {
-
+            //Clientes cadastrados
             listaClientes.Add(new Cliente(1, "Victor Rocha", "Rua Joao Regino", "32712248", "Próximo ao Shopping X"));
 
+            //Entregadores cadastrados
+            listaEntregadores.Add(new Entregador(1,"Joao Entregador", "abc123"));
+
+            //Produtos cadastrados
             listaLanche.Add(new cardapio.Lanche("pastel de queijo", 10.50, 101));
             listaLanche.Add(new cardapio.Lanche("pastel de carne", 12.50, 102));
             listaLanche.Add(new cardapio.Lanche("pastel de chocolate", 15.50, 103));

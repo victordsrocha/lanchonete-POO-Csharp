@@ -52,6 +52,7 @@
     <Compile Include="cardapio\Refeicao.cs" />
     <Compile Include="cardapio\Sobremesa.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="Entregador.cs" />
     <Compile Include="ItemCardapio.cs" />
     <Compile Include="ItemPedido.cs" />
     <Compile Include="Pedido.cs" />
@@ -62,6 +63,12 @@
     </Compile>
     <Compile Include="telas\CadastroCliente.Designer.cs">
       <DependentUpon>CadastroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telas\CadastroEntregador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas\CadastroEntregador.Designer.cs">
+      <DependentUpon>CadastroEntregador.cs</DependentUpon>
     </Compile>
     <Compile Include="telas\CadastroProduto.cs">
       <SubType>Form</SubType>
@@ -87,6 +94,12 @@
     <Compile Include="telas\MostrarCliente.Designer.cs">
       <DependentUpon>MostrarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="telas\MostrarEntregadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas\MostrarEntregadores.Designer.cs">
+      <DependentUpon>MostrarEntregadores.cs</DependentUpon>
+    </Compile>
     <Compile Include="telas\Quantidade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +118,9 @@
     <EmbeddedResource Include="telas\CadastroCliente.resx">
       <DependentUpon>CadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="telas\CadastroEntregador.resx">
+      <DependentUpon>CadastroEntregador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="telas\CadastroProduto.resx">
       <DependentUpon>CadastroProduto.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="telas\MostrarCliente.resx">
       <DependentUpon>MostrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telas\MostrarEntregadores.resx">
+      <DependentUpon>MostrarEntregadores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="telas\Quantidade.resx">
       <DependentUpon>Quantidade.cs</DependentUpon>

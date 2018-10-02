@@ -52,5 +52,15 @@ namespace Lanchonete.telas {
             MostrarCliente janelaMostrarCliente = new MostrarCliente();
             janelaMostrarCliente.ShowDialog();
         }
+
+        private void cadastrarEntregadorToolStripMenuItem_Click(object sender, EventArgs e) {
+            CadastroEntregador janelaCadastroEntregador = new CadastroEntregador();
+            janelaCadastroEntregador.ShowDialog();
+        }
+
+        private void mostrarEntregadoresToolStripMenuItem_Click(object sender, EventArgs e) {
+            MostrarEntregadores janelaMostrarEntregadores = new MostrarEntregadores();
+            janelaMostrarEntregadores.ShowDialog();
+        }
     }
 }

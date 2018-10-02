@@ -28,6 +28,10 @@ namespace Lanchonete {
         public static int defineCodigoCliente() {
             return Program.listaClientes.Count + 1;
         }
+
+        public static int defineCodigoEntregador() {
+            return Program.listaEntregadores.Count + 1;
+        }
     }
 
 }
