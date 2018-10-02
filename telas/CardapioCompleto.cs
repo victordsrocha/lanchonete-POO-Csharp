@@ -14,30 +14,6 @@ namespace Lanchonete.telas {
             InitializeComponent();
         }
 
-        /*
-        private void CardapioCompleto_Load(object sender, EventArgs e) {
-            string s = "codigo\tcategoria\t\tnome\tpreco\tquantidade{0}";
-            for (int i = 0; i < Program.listaLanche.Count; i++) {
-                s += Program.listaLanche[i].ToString();
-                s += "{0}";
-            }
-            for (int i = 0; i < Program.listaRefeicao.Count; i++) {
-                s += Program.listaRefeicao[i].ToString();
-                s += "{0}";
-            }
-            for (int i = 0; i < Program.listaSobremesa.Count; i++) {
-                s += Program.listaSobremesa[i].ToString();
-                s += "{0}";
-            }
-            for (int i = 0; i < Program.listaBebida.Count; i++) {
-                s += Program.listaBebida[i].ToString();
-                s += "{0}";
-            }
-            s = string.Format(s,Environment.NewLine);
-            Cardapio_textBox.Text = s;
-        }
-        */
-
         private void CardapioCompleto_Load(object sender, EventArgs e) {
             string s1 = "Categoria Lanche:{0}{0}";
             for (int i = 0; i < Program.listaLanche.Count; i++) {

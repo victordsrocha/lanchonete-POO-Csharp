@@ -32,13 +32,17 @@
             this.sobremesaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarCardapioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.completoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mostrarClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cardapioToolStripMenuItem});
+            this.cardapioToolStripMenuItem,
+            this.clienteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -108,6 +112,29 @@
             this.completoToolStripMenuItem.Text = "Completo";
             this.completoToolStripMenuItem.Click += new System.EventHandler(this.completoToolStripMenuItem_Click);
             // 
+            // clienteToolStripMenuItem
+            // 
+            this.clienteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarClienteToolStripMenuItem,
+            this.mostrarClientesToolStripMenuItem});
+            this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.clienteToolStripMenuItem.Text = "Cliente";
+            // 
+            // cadastrarClienteToolStripMenuItem
+            // 
+            this.cadastrarClienteToolStripMenuItem.Name = "cadastrarClienteToolStripMenuItem";
+            this.cadastrarClienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarClienteToolStripMenuItem.Text = "Cadastrar cliente";
+            this.cadastrarClienteToolStripMenuItem.Click += new System.EventHandler(this.cadastrarClienteToolStripMenuItem_Click);
+            // 
+            // mostrarClientesToolStripMenuItem
+            // 
+            this.mostrarClientesToolStripMenuItem.Name = "mostrarClientesToolStripMenuItem";
+            this.mostrarClientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mostrarClientesToolStripMenuItem.Text = "Mostrar clientes";
+            this.mostrarClientesToolStripMenuItem.Click += new System.EventHandler(this.mostrarClientesToolStripMenuItem_Click);
+            // 
             // Hunger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,5 +163,8 @@
         private System.Windows.Forms.ToolStripMenuItem sobremesaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mostrarCardapioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem completoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mostrarClientesToolStripMenuItem;
     }
 }

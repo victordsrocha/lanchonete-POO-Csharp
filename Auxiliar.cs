@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Lanchonete {
     class Auxiliar {
 
-        public static int defineCodigo(string categoria) {
+        public static int defineCodigoProduto(string categoria) {
             if (categoria == "lanche") {
                 return Program.listaLanche.Count + 101;
             }
@@ -23,6 +23,10 @@ namespace Lanchonete {
             else {
                 return 0;
             }
+        }
+
+        public static int defineCodigoCliente() {
+            return Program.listaClientes.Count + 1;
         }
     }
 

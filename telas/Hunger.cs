@@ -42,5 +42,15 @@ namespace Lanchonete.telas {
             CardapioCompleto novaJanela = new CardapioCompleto();
             novaJanela.ShowDialog();
         }
+
+        private void cadastrarClienteToolStripMenuItem_Click(object sender, EventArgs e) {
+            CadastroCliente janelaCadastroCliente = new CadastroCliente();
+            janelaCadastroCliente.ShowDialog();
+        }
+
+        private void mostrarClientesToolStripMenuItem_Click(object sender, EventArgs e) {
+            MostrarCliente janelaMostrarCliente = new MostrarCliente();
+            janelaMostrarCliente.ShowDialog();
+        }
     }
 }
