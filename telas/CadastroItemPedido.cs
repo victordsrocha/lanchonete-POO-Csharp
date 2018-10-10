@@ -1,0 +1,57 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Lanchonete.telas {
+    public partial class CadastroItemPedido : Form {
+        public CadastroItemPedido() {
+            InitializeComponent();
+        }
+
+        private void okButton_Click(object sender, EventArgs e) {
+
+            int codigo = int.Parse(codigoTextBox.Text);
+            ItemCardapio instanciaItemCardapio = Auxiliar.identificaItem(codigo);
+
+            int qtd = int.Parse(quantidadeTextBox.Text);
+
+            ItemPedido instanciaItemPedido = new ItemPedido(instanciaItemCardapio, qtd);
+
+            nomeTextBox.Text = instanciaItemPedido.item.nome;
+            categoriaTextBox.Text = instanciaItemPedido.item.categoria;
+            valorUniTextBox.Text = Convert.ToString(instanciaItemPedido.item.preco);
+            if (instanciaItemCardapio is cardapio.Bebida) {
+                estoqueTextBox.Text = Convert.ToString(Auxiliar.identificaEstoque(codigo));
+            }
+            else {
+                estoqueTextBox.Text = "-";
+            }
+            
+            if (instanciaItemCardapio is cardapio.Lanche) {
+                categoriaTextBox.Text = "lanche";
+            }
+            else if (instanciaItemCardapio is cardapio.Refeicao) {
+                categoriaTextBox.Text = "refeicao";
+            }
+            else if (instanciaItemCardapio is cardapio.Bebida) {
+                categoriaTextBox.Text = "bebida";
+            }
+            else if (instanciaItemCardapio is cardapio.Sobremesa) {
+                categoriaTextBox.Text = "sobremesa";
+            }
+
+
+        }
+
+        private void CadastroItemPedido_Load(object sender, EventArgs e) {
+
+        }
+    }
+}
+

@@ -10,6 +10,7 @@ namespace Lanchonete {
         public string nome { get; protected set; }
         public double preco { get; protected set; }
         public int codigo { get; set; }
+        public string categoria;
 
         public ItemCardapio(string nome, double preco, int codigo) {
             this.nome = nome;

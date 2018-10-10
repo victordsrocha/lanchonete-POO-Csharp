@@ -39,24 +39,24 @@
             this.cadastrarEntregadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarEntregadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -91,7 +91,7 @@
             this.bebidaToolStripMenuItem,
             this.sobremesaToolStripMenuItem});
             this.cadastrarProdutoToolStripMenuItem.Name = "cadastrarProdutoToolStripMenuItem";
-            this.cadastrarProdutoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarProdutoToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.cadastrarProdutoToolStripMenuItem.Text = "Cadastrar Produto";
             // 
             // lancheToolStripMenuItem
@@ -127,7 +127,7 @@
             this.mostrarCardapioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.completoToolStripMenuItem});
             this.mostrarCardapioToolStripMenuItem.Name = "mostrarCardapioToolStripMenuItem";
-            this.mostrarCardapioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mostrarCardapioToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.mostrarCardapioToolStripMenuItem.Text = "Mostrar Cardapio";
             // 
             // completoToolStripMenuItem
@@ -149,14 +149,14 @@
             // cadastrarClienteToolStripMenuItem
             // 
             this.cadastrarClienteToolStripMenuItem.Name = "cadastrarClienteToolStripMenuItem";
-            this.cadastrarClienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarClienteToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.cadastrarClienteToolStripMenuItem.Text = "Cadastrar cliente";
             this.cadastrarClienteToolStripMenuItem.Click += new System.EventHandler(this.cadastrarClienteToolStripMenuItem_Click);
             // 
             // mostrarClientesToolStripMenuItem
             // 
             this.mostrarClientesToolStripMenuItem.Name = "mostrarClientesToolStripMenuItem";
-            this.mostrarClientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mostrarClientesToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.mostrarClientesToolStripMenuItem.Text = "Mostrar clientes";
             this.mostrarClientesToolStripMenuItem.Click += new System.EventHandler(this.mostrarClientesToolStripMenuItem_Click);
             // 
@@ -202,21 +202,66 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro de novos pedidos";
             // 
-            // label1
+            // textBox3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Código do cliente";
+            this.textBox3.Location = new System.Drawing.Point(182, 152);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 9;
             // 
-            // dateTimePicker1
+            // label4
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(143, 68);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(233, 20);
-            this.dateTimePicker1.TabIndex = 1;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(92, 156);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Valor do pedido";
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(76, 124);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(238, 23);
+            this.button7.TabIndex = 7;
+            this.button7.Text = "Visualizar pedido";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(209, 175);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Cancelar";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(59, 175);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Confimar pedido";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(184, 31);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(76, 94);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(238, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Cadastrar itens no pedido";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -226,6 +271,22 @@
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Data";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(143, 68);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(233, 20);
+            this.dateTimePicker1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Código do cliente";
             // 
             // groupBox2
             // 
@@ -243,108 +304,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Entregas";
             // 
-            // button1
+            // textBox4
             // 
-            this.button1.Location = new System.Drawing.Point(76, 94);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(238, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Cadastrar itens no pedido";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(184, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(59, 175);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Confimar pedido";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(209, 175);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Cancelar";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 39);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Código do entregador";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(208, 31);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(80, 63);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(206, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "adicionar pedidos para o entregador";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(233, 146);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Cancelar";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(49, 146);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(118, 23);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "Enviar entregador";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(76, 124);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(238, 23);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Visualizar pedido";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(92, 156);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Valor do pedido";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(182, 152);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 9;
+            this.textBox4.Location = new System.Drawing.Point(252, 103);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 6;
             // 
             // label5
             // 
@@ -355,13 +321,48 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Valor total dos pedidos desta entrega";
             // 
-            // textBox4
+            // button6
             // 
-            this.textBox4.Location = new System.Drawing.Point(252, 103);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 6;
+            this.button6.Location = new System.Drawing.Point(49, 146);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(118, 23);
+            this.button6.TabIndex = 4;
+            this.button6.Text = "Enviar entregador";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(233, 146);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Cancelar";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(80, 63);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(206, 23);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "adicionar pedidos para o entregador";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(208, 31);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(46, 39);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Código do entregador";
             // 
             // Hunger
             // 

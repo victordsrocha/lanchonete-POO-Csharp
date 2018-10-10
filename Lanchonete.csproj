@@ -70,6 +70,12 @@
     <Compile Include="telas\CadastroEntregador.Designer.cs">
       <DependentUpon>CadastroEntregador.cs</DependentUpon>
     </Compile>
+    <Compile Include="telas\CadastroItemPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas\CadastroItemPedido.Designer.cs">
+      <DependentUpon>CadastroItemPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="telas\CadastroProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="telas\CadastroEntregador.resx">
       <DependentUpon>CadastroEntregador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telas\CadastroItemPedido.resx">
+      <DependentUpon>CadastroItemPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="telas\CadastroProduto.resx">
       <DependentUpon>CadastroProduto.cs</DependentUpon>

@@ -32,6 +32,33 @@ namespace Lanchonete {
         public static int defineCodigoEntregador() {
             return Program.listaEntregadores.Count + 1;
         }
+
+        public static ItemCardapio identificaItem(int codigo) {
+            if (codigo > 100 && codigo < 200) {
+                int pos = Program.listaLanche.FindIndex(x => x.codigo == codigo);
+                return Program.listaLanche[pos];
+            }
+            else if (codigo > 200 && codigo < 300) {
+                int pos = Program.listaRefeicao.FindIndex(x => x.codigo == codigo);
+                return Program.listaRefeicao[pos];
+            }
+            else if (codigo > 300 && codigo < 400) {
+                int pos = Program.listaBebida.FindIndex(x => x.codigo == codigo);
+                return Program.listaBebida[pos];
+            }
+            else if (codigo > 400 && codigo < 500) {
+                int pos = Program.listaSobremesa.FindIndex(x => x.codigo == codigo);
+                return Program.listaSobremesa[pos];
+            }
+            return null;
+        }
+
+        public static int identificaEstoque(int codigo) {
+            int pos = Program.listaBebida.FindIndex(x => x.codigo == codigo);
+            cardapio.Bebida B = (cardapio.Bebida)Program.listaBebida[pos];
+            return B.estoque;
+        }
+
     }
 
 }

@@ -62,5 +62,10 @@ namespace Lanchonete.telas {
             MostrarEntregadores janelaMostrarEntregadores = new MostrarEntregadores();
             janelaMostrarEntregadores.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e) {
+            CadastroItemPedido janelaCadastroItemPedido = new CadastroItemPedido();
+            janelaCadastroItemPedido.ShowDialog();
+        }
     }
 }

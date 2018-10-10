@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 namespace cardapio {
     class Bebida : Lanchonete.ItemCardapio {
 
-        public int qtd { get; set; }
+        public int estoque { get; set; }
         public string categoria { get; set; }
 
         public Bebida(string nome, double preco, int codigo, int qtd ) : base(nome, preco, codigo) {
-            this.qtd = qtd;
+            this.estoque = qtd;
             this.categoria = "bebida";
         }
 
         public override string ToString() {
             return base.ToString()
-                + "{0}\t\tQuantidade em estoque: " + qtd;
+                + "{0}\t\tQuantidade em estoque: " + estoque;
         }
     }
 }
