@@ -39,6 +39,8 @@
             this.estoqueTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Confirmarbutton = new System.Windows.Forms.Button();
+            this.ValorQtdTextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -54,11 +56,11 @@
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(84, 106);
+            this.okButton.Location = new System.Drawing.Point(37, 106);
             this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(75, 23);
+            this.okButton.Size = new System.Drawing.Size(202, 23);
             this.okButton.TabIndex = 1;
-            this.okButton.Text = "OK";
+            this.okButton.Text = "Enviar para confirmação";
             this.okButton.UseVisualStyleBackColor = true;
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
@@ -137,7 +139,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(323, 132);
+            this.label6.Location = new System.Drawing.Point(323, 158);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 13);
             this.label6.TabIndex = 10;
@@ -161,7 +163,7 @@
             // 
             // estoqueTextBox
             // 
-            this.estoqueTextBox.Location = new System.Drawing.Point(397, 129);
+            this.estoqueTextBox.Location = new System.Drawing.Point(115, 141);
             this.estoqueTextBox.Name = "estoqueTextBox";
             this.estoqueTextBox.ReadOnly = true;
             this.estoqueTextBox.Size = new System.Drawing.Size(100, 20);
@@ -169,6 +171,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.estoqueTextBox);
+            this.groupBox2.Controls.Add(this.ValorQtdTextBox);
             this.groupBox2.Controls.Add(this.Confirmarbutton);
             this.groupBox2.Location = new System.Drawing.Point(282, 14);
             this.groupBox2.Name = "groupBox2";
@@ -179,19 +184,36 @@
             // 
             // Confirmarbutton
             // 
-            this.Confirmarbutton.Location = new System.Drawing.Point(86, 147);
+            this.Confirmarbutton.Location = new System.Drawing.Point(86, 173);
             this.Confirmarbutton.Name = "Confirmarbutton";
             this.Confirmarbutton.Size = new System.Drawing.Size(75, 23);
             this.Confirmarbutton.TabIndex = 5;
             this.Confirmarbutton.Text = "Confirmar";
             this.Confirmarbutton.UseVisualStyleBackColor = true;
+            this.Confirmarbutton.Click += new System.EventHandler(this.Confirmarbutton_Click);
+            // 
+            // ValorQtdTextBox
+            // 
+            this.ValorQtdTextBox.Location = new System.Drawing.Point(115, 115);
+            this.ValorQtdTextBox.Name = "ValorQtdTextBox";
+            this.ValorQtdTextBox.ReadOnly = true;
+            this.ValorQtdTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ValorQtdTextBox.TabIndex = 15;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(22, 118);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(87, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Valor quantidade";
             // 
             // CadastroItemPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(558, 275);
-            this.Controls.Add(this.estoqueTextBox);
             this.Controls.Add(this.valorUniTextBox);
             this.Controls.Add(this.nomeTextBox);
             this.Controls.Add(this.label6);
@@ -207,6 +229,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +253,7 @@
         private System.Windows.Forms.TextBox estoqueTextBox;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button Confirmarbutton;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox ValorQtdTextBox;
     }
 }

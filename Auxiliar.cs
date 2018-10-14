@@ -29,6 +29,10 @@ namespace Lanchonete {
             return Program.listaClientes.Count + 1;
         }
 
+        public static int defineCodigoPedido() {
+            return Program.listaPedidos.Count + 1;
+        }
+
         public static int defineCodigoEntregador() {
             return Program.listaEntregadores.Count + 1;
         }
@@ -57,6 +61,18 @@ namespace Lanchonete {
             int pos = Program.listaBebida.FindIndex(x => x.codigo == codigo);
             cardapio.Bebida B = (cardapio.Bebida)Program.listaBebida[pos];
             return B.estoque;
+        }
+
+        public static Cliente identificaCliente(int codigo) {
+            int pos = Program.listaClientes.FindIndex(x => x.codigo == codigo);
+            Cliente C = Program.listaClientes[pos];
+            return C;
+        }
+
+        public static Pedido identificaPedido(int codigo) {
+            int pos = Program.listaPedidos.FindIndex(x => x.codigo == codigo);
+            Pedido P = Program.listaPedidos[pos];
+            return P;
         }
 
     }

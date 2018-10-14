@@ -11,7 +11,7 @@ namespace Lanchonete {
         /// The main entry point for the application.
         /// </summary>
         /// 
-
+        public static List<Pedido> listaPedidos = new List<Pedido>();
         public static List<Cliente> listaClientes = new List<Cliente>();
         public static List<Entregador> listaEntregadores = new List<Entregador>();
         public static List<ItemCardapio> listaLanche = new List<ItemCardapio>();
@@ -23,6 +23,7 @@ namespace Lanchonete {
         static void Main() {
             //Clientes cadastrados
             listaClientes.Add(new Cliente(1, "Victor Rocha", "Rua Joao Regino", "32712248", "Próximo ao Shopping X"));
+            listaClientes.Add(new Cliente(2, "Mabel Coruja", "Rua das Corujas", "12345678", "Próximo à biblioteca"));
 
             //Entregadores cadastrados
             listaEntregadores.Add(new Entregador(1,"Joao Entregador", "abc123"));

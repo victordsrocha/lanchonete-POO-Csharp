@@ -23,5 +23,12 @@ namespace Lanchonete {
             return item.preco * qtd;
         }
 
+        public override string ToString() {
+            return "\t" + item.nome + ": ( " + qtd + " unidades)" +
+                "{0}{0}" +
+                "\t\tcódigo: " + item.codigo + "{0}" +
+                "\t\tpreço unitário: R$ " + item.preco.ToString("F2") + "{0}" +
+                "\t\tpreço " + qtd + " unidades: R$ " + subTotal().ToString("F2");
+        }
     }
 }

@@ -106,6 +106,18 @@
     <Compile Include="telas\MostrarEntregadores.Designer.cs">
       <DependentUpon>MostrarEntregadores.cs</DependentUpon>
     </Compile>
+    <Compile Include="telas\MostrarPedidoAtual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas\MostrarPedidoAtual.Designer.cs">
+      <DependentUpon>MostrarPedidoAtual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telas\MostrarPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas\MostrarPedidos.Designer.cs">
+      <DependentUpon>MostrarPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="telas\Quantidade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +156,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="telas\MostrarEntregadores.resx">
       <DependentUpon>MostrarEntregadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telas\MostrarPedidoAtual.resx">
+      <DependentUpon>MostrarPedidoAtual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telas\MostrarPedidos.resx">
+      <DependentUpon>MostrarPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="telas\Quantidade.resx">
       <DependentUpon>Quantidade.cs</DependentUpon>
