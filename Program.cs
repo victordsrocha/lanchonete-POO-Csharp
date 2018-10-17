@@ -11,6 +11,7 @@ namespace Lanchonete {
         /// The main entry point for the application.
         /// </summary>
         /// 
+        public static int numeroPedido = 0;
         public static List<Pedido> listaPedidos = new List<Pedido>();
         public static List<Cliente> listaClientes = new List<Cliente>();
         public static List<Entregador> listaEntregadores = new List<Entregador>();

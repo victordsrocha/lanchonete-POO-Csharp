@@ -38,6 +38,9 @@
             this.entregadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarEntregadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarEntregadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mostrarPedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nãoEntreguesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.atualizaValorTextButton = new System.Windows.Forms.Button();
             this.codigoPedidoTextBox = new System.Windows.Forms.TextBox();
@@ -54,6 +57,8 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
@@ -61,14 +66,15 @@
             this.button4 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mostrarPedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nãoEntreguesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cancelarPedidoCadastradoButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.codigoPedidoAlteracaoTextBox = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -192,6 +198,29 @@
             this.mostrarEntregadoresToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.mostrarEntregadoresToolStripMenuItem.Text = "Mostrar entregadores";
             this.mostrarEntregadoresToolStripMenuItem.Click += new System.EventHandler(this.mostrarEntregadoresToolStripMenuItem_Click);
+            // 
+            // pedidosToolStripMenuItem
+            // 
+            this.pedidosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mostrarPedidosToolStripMenuItem});
+            this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
+            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.pedidosToolStripMenuItem.Text = "Pedidos";
+            // 
+            // mostrarPedidosToolStripMenuItem
+            // 
+            this.mostrarPedidosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nãoEntreguesToolStripMenuItem});
+            this.mostrarPedidosToolStripMenuItem.Name = "mostrarPedidosToolStripMenuItem";
+            this.mostrarPedidosToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.mostrarPedidosToolStripMenuItem.Text = "Mostrar pedidos";
+            // 
+            // nãoEntreguesToolStripMenuItem
+            // 
+            this.nãoEntreguesToolStripMenuItem.Name = "nãoEntreguesToolStripMenuItem";
+            this.nãoEntreguesToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.nãoEntreguesToolStripMenuItem.Text = "Não entregues";
+            this.nãoEntreguesToolStripMenuItem.Click += new System.EventHandler(this.nãoEntreguesToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -368,6 +397,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Entregas";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(188, 38);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 8;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(48, 45);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(116, 13);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Pedidos não entregues";
+            // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(254, 161);
@@ -428,50 +473,60 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Código do entregador";
             // 
-            // label7
+            // groupBox3
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(48, 45);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(116, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Pedidos não entregues";
+            this.groupBox3.Controls.Add(this.cancelarPedidoCadastradoButton);
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.codigoPedidoAlteracaoTextBox);
+            this.groupBox3.Location = new System.Drawing.Point(12, 303);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(382, 257);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Alterar ou cancelar pedidos cadastrados";
             // 
-            // textBox1
+            // cancelarPedidoCadastradoButton
             // 
-            this.textBox1.Location = new System.Drawing.Point(188, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 8;
+            this.cancelarPedidoCadastradoButton.Location = new System.Drawing.Point(22, 63);
+            this.cancelarPedidoCadastradoButton.Name = "cancelarPedidoCadastradoButton";
+            this.cancelarPedidoCadastradoButton.Size = new System.Drawing.Size(129, 23);
+            this.cancelarPedidoCadastradoButton.TabIndex = 3;
+            this.cancelarPedidoCadastradoButton.Text = "Cancelar o pedido";
+            this.cancelarPedidoCadastradoButton.UseVisualStyleBackColor = true;
+            this.cancelarPedidoCadastradoButton.Click += new System.EventHandler(this.CancelarPedidoCadastradoButton_Click);
             // 
-            // pedidosToolStripMenuItem
+            // button1
             // 
-            this.pedidosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mostrarPedidosToolStripMenuItem});
-            this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
-            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.pedidosToolStripMenuItem.Text = "Pedidos";
+            this.button1.Location = new System.Drawing.Point(192, 63);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(129, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Alterar o pedido";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // mostrarPedidosToolStripMenuItem
+            // label8
             // 
-            this.mostrarPedidosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nãoEntreguesToolStripMenuItem});
-            this.mostrarPedidosToolStripMenuItem.Name = "mostrarPedidosToolStripMenuItem";
-            this.mostrarPedidosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.mostrarPedidosToolStripMenuItem.Text = "Mostrar pedidos";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(19, 27);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(90, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Código do pedido";
             // 
-            // nãoEntreguesToolStripMenuItem
+            // codigoPedidoAlteracaoTextBox
             // 
-            this.nãoEntreguesToolStripMenuItem.Name = "nãoEntreguesToolStripMenuItem";
-            this.nãoEntreguesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.nãoEntreguesToolStripMenuItem.Text = "Não entregues";
-            this.nãoEntreguesToolStripMenuItem.Click += new System.EventHandler(this.nãoEntreguesToolStripMenuItem_Click);
+            this.codigoPedidoAlteracaoTextBox.Location = new System.Drawing.Point(115, 24);
+            this.codigoPedidoAlteracaoTextBox.Name = "codigoPedidoAlteracaoTextBox";
+            this.codigoPedidoAlteracaoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.codigoPedidoAlteracaoTextBox.TabIndex = 0;
             // 
             // Hunger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 308);
+            this.ClientSize = new System.Drawing.Size(800, 572);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
@@ -485,6 +540,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -535,5 +592,10 @@
         private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mostrarPedidosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nãoEntreguesToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button cancelarPedidoCadastradoButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox codigoPedidoAlteracaoTextBox;
     }
 }

@@ -30,7 +30,8 @@ namespace Lanchonete {
         }
 
         public static int defineCodigoPedido() {
-            return Program.listaPedidos.Count + 1;
+            Program.numeroPedido += 1;
+            return Program.numeroPedido;
         }
 
         public static int defineCodigoEntregador() {

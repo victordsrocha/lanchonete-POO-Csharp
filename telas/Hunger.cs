@@ -161,5 +161,36 @@ namespace Lanchonete.telas {
             MostrarPedidos janelaMostrarPedidos = new MostrarPedidos();
             janelaMostrarPedidos.ShowDialog();
         }
+
+        private void CancelarPedidoCadastradoButton_Click(object sender, EventArgs e) {
+            int codigo = int.Parse(codigoPedidoAlteracaoTextBox.Text);
+            int pos = Program.listaPedidos.FindIndex(x => x.codigo == codigo);
+
+            if (pos != -1) {
+
+                //retornar bebidas para o estoque!
+                for (int i = 0; i < Program.listaPedidos[pos].itens.Count; i++) {
+                    if (Program.listaPedidos[pos].itens[i].item is cardapio.Bebida) {
+                        string nomeBebidaRepos = Program.listaPedidos[pos].itens[i].item.nome;
+                        int qtdBebidaRepos = Program.listaPedidos[pos].itens[i].qtd;
+                        int codigoBebidaRepos = Program.listaPedidos[pos].itens[i].item.codigo;
+
+                        MessageBox.Show(qtdBebidaRepos + " " + nomeBebidaRepos + " voltaram para o estoque!");
+
+                        int posBebida = Program.listaBebida.FindIndex(x => x.codigo == codigoBebidaRepos);
+                        cardapio.Bebida bebida = (cardapio.Bebida)Program.listaBebida[posBebida];
+                        bebida.estoque += qtdBebidaRepos;
+                        Program.listaBebida[posBebida] = bebida;
+                    }
+                }
+
+
+                Program.listaPedidos.RemoveAt(pos);
+                MessageBox.Show("Pedido " + codigo + " deletado");
+            }
+            else {
+                MessageBox.Show("Código de pedido inválido!");
+            }
+        }
     }
 }
