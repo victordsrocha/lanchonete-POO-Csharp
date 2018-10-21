@@ -40,8 +40,12 @@ namespace Lanchonete.telas {
         }
 
         private void completoToolStripMenuItem_Click(object sender, EventArgs e) {
+            /*
             CardapioCompleto novaJanela = new CardapioCompleto();
             novaJanela.ShowDialog();
+            */
+            CardapioCompletoList janelaCardapioCompletoList = new CardapioCompletoList();
+            janelaCardapioCompletoList.ShowDialog();
         }
 
         private void cadastrarClienteToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -152,9 +156,24 @@ namespace Lanchonete.telas {
             iniciarPedidoButton.Enabled = true;
             codigoClienteTextBox.Enabled = true;
 
-
             int pos = Program.listaPedidos.Count - 1;
+
+            //retornar bebidas para o estoque!
+            for (int i = 0; i < Program.listaPedidos[pos].itens.Count; i++) {
+                if (Program.listaPedidos[pos].itens[i].item is cardapio.Bebida) {
+                    int qtdBebidaRepos = Program.listaPedidos[pos].itens[i].qtd;
+                    int codigoBebidaRepos = Program.listaPedidos[pos].itens[i].item.codigo;
+                    int posBebida = Program.listaBebida.FindIndex(x => x.codigo == codigoBebidaRepos);
+                    cardapio.Bebida bebida = (cardapio.Bebida)Program.listaBebida[posBebida];
+                    bebida.estoque += qtdBebidaRepos;
+                    Program.listaBebida[posBebida] = bebida;
+                }
+            }
+
+            
             Program.listaPedidos.RemoveAt(pos);
+
+            Program.numeroPedido -= 1;
         }
 
         private void nãoEntreguesToolStripMenuItem_Click(object sender, EventArgs e) {

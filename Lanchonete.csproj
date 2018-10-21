@@ -88,6 +88,12 @@
     <Compile Include="telas\CardapioCompleto.Designer.cs">
       <DependentUpon>CardapioCompleto.cs</DependentUpon>
     </Compile>
+    <Compile Include="telas\CardapioCompletoList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas\CardapioCompletoList.Designer.cs">
+      <DependentUpon>CardapioCompletoList.cs</DependentUpon>
+    </Compile>
     <Compile Include="telas\Hunger.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="telas\CardapioCompleto.resx">
       <DependentUpon>CardapioCompleto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telas\CardapioCompletoList.resx">
+      <DependentUpon>CardapioCompletoList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="telas\Hunger.resx">
       <DependentUpon>Hunger.cs</DependentUpon>
