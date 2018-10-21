@@ -68,9 +68,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cancelarPedidoCadastradoButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.AlterarPedidoBotao = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.codigoPedidoAlteracaoTextBox = new System.Windows.Forms.TextBox();
+            this.incluirBotao = new System.Windows.Forms.Button();
+            this.excluirBotao = new System.Windows.Forms.Button();
+            this.ConcluirAlterar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -475,8 +478,11 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.ConcluirAlterar);
+            this.groupBox3.Controls.Add(this.excluirBotao);
+            this.groupBox3.Controls.Add(this.incluirBotao);
             this.groupBox3.Controls.Add(this.cancelarPedidoCadastradoButton);
-            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.AlterarPedidoBotao);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.codigoPedidoAlteracaoTextBox);
             this.groupBox3.Location = new System.Drawing.Point(12, 303);
@@ -496,14 +502,15 @@
             this.cancelarPedidoCadastradoButton.UseVisualStyleBackColor = true;
             this.cancelarPedidoCadastradoButton.Click += new System.EventHandler(this.CancelarPedidoCadastradoButton_Click);
             // 
-            // button1
+            // AlterarPedidoBotao
             // 
-            this.button1.Location = new System.Drawing.Point(192, 63);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Alterar o pedido";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AlterarPedidoBotao.Location = new System.Drawing.Point(192, 63);
+            this.AlterarPedidoBotao.Name = "AlterarPedidoBotao";
+            this.AlterarPedidoBotao.Size = new System.Drawing.Size(129, 23);
+            this.AlterarPedidoBotao.TabIndex = 2;
+            this.AlterarPedidoBotao.Text = "Alterar o pedido";
+            this.AlterarPedidoBotao.UseVisualStyleBackColor = true;
+            this.AlterarPedidoBotao.Click += new System.EventHandler(this.AlterarPedidoBotao_Click);
             // 
             // label8
             // 
@@ -520,6 +527,39 @@
             this.codigoPedidoAlteracaoTextBox.Name = "codigoPedidoAlteracaoTextBox";
             this.codigoPedidoAlteracaoTextBox.Size = new System.Drawing.Size(100, 20);
             this.codigoPedidoAlteracaoTextBox.TabIndex = 0;
+            // 
+            // incluirBotao
+            // 
+            this.incluirBotao.Enabled = false;
+            this.incluirBotao.Location = new System.Drawing.Point(22, 92);
+            this.incluirBotao.Name = "incluirBotao";
+            this.incluirBotao.Size = new System.Drawing.Size(129, 23);
+            this.incluirBotao.TabIndex = 4;
+            this.incluirBotao.Text = "Incluir item";
+            this.incluirBotao.UseVisualStyleBackColor = true;
+            this.incluirBotao.Click += new System.EventHandler(this.incluirBotao_Click);
+            // 
+            // excluirBotao
+            // 
+            this.excluirBotao.Enabled = false;
+            this.excluirBotao.Location = new System.Drawing.Point(192, 92);
+            this.excluirBotao.Name = "excluirBotao";
+            this.excluirBotao.Size = new System.Drawing.Size(129, 23);
+            this.excluirBotao.TabIndex = 5;
+            this.excluirBotao.Text = "Excluir item";
+            this.excluirBotao.UseVisualStyleBackColor = true;
+            this.excluirBotao.Click += new System.EventHandler(this.excluirBotao_Click);
+            // 
+            // ConcluirAlterar
+            // 
+            this.ConcluirAlterar.Enabled = false;
+            this.ConcluirAlterar.Location = new System.Drawing.Point(22, 121);
+            this.ConcluirAlterar.Name = "ConcluirAlterar";
+            this.ConcluirAlterar.Size = new System.Drawing.Size(299, 23);
+            this.ConcluirAlterar.TabIndex = 6;
+            this.ConcluirAlterar.Text = "Concluir";
+            this.ConcluirAlterar.UseVisualStyleBackColor = true;
+            this.ConcluirAlterar.Click += new System.EventHandler(this.ConcluirAlterar_Click);
             // 
             // Hunger
             // 
@@ -594,8 +634,11 @@
         private System.Windows.Forms.ToolStripMenuItem nãoEntreguesToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button cancelarPedidoCadastradoButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AlterarPedidoBotao;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox codigoPedidoAlteracaoTextBox;
+        private System.Windows.Forms.Button ConcluirAlterar;
+        private System.Windows.Forms.Button excluirBotao;
+        private System.Windows.Forms.Button incluirBotao;
     }
 }

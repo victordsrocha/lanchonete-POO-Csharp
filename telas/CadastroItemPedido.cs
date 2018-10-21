@@ -11,7 +11,10 @@ using System.Windows.Forms;
 namespace Lanchonete.telas {
     public partial class CadastroItemPedido : Form {
 
-        public CadastroItemPedido() {
+        int pos;
+
+        public CadastroItemPedido(int pos) {
+            this.pos = pos;
             InitializeComponent();
         }
 
@@ -62,7 +65,8 @@ namespace Lanchonete.telas {
             if (instanciaItemCardapio is cardapio.Bebida) {
                 if (qtd <= Auxiliar.identificaEstoque(codigo)) {
                     ItemPedido instanciaItemPedido = new ItemPedido(instanciaItemCardapio, qtd);
-                    Program.listaPedidos[Program.listaPedidos.Count - 1].itens.Add(instanciaItemPedido);
+                    //Program.listaPedidos[Program.listaPedidos.Count - 1].itens.Add(instanciaItemPedido);
+                    Program.listaPedidos[pos - 1].itens.Add(instanciaItemPedido);
                     this.Close();
                 }
                 else {
@@ -71,7 +75,8 @@ namespace Lanchonete.telas {
             }
             else {
                 ItemPedido instanciaItemPedido = new ItemPedido(instanciaItemCardapio, qtd);
-                Program.listaPedidos[Program.listaPedidos.Count - 1].itens.Add(instanciaItemPedido);
+                //Program.listaPedidos[Program.listaPedidos.Count - 1].itens.Add(instanciaItemPedido);
+                Program.listaPedidos[pos-1].itens.Add(instanciaItemPedido);
                 this.Close();
             }
 

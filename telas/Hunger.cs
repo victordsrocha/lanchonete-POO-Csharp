@@ -54,7 +54,11 @@ namespace Lanchonete.telas {
         }
 
         private void mostrarClientesToolStripMenuItem_Click(object sender, EventArgs e) {
+            /*
             MostrarCliente janelaMostrarCliente = new MostrarCliente();
+            janelaMostrarCliente.ShowDialog();
+            */
+            MostrarClienteList janelaMostrarCliente = new MostrarClienteList();
             janelaMostrarCliente.ShowDialog();
         }
 
@@ -69,7 +73,7 @@ namespace Lanchonete.telas {
         }
 
         private void CadastroItemPedidoButton_Click(object sender, EventArgs e) {
-            CadastroItemPedido janelaCadastroItemPedido = new CadastroItemPedido();
+            CadastroItemPedido janelaCadastroItemPedido = new CadastroItemPedido(int.Parse(codigoPedidoTextBox.Text));
             janelaCadastroItemPedido.ShowDialog();
         }
 
@@ -109,7 +113,7 @@ namespace Lanchonete.telas {
             }
             else {
                 MessageBox.Show("Digite um código válido de cliente");
-                
+
             }
         }
 
@@ -170,7 +174,7 @@ namespace Lanchonete.telas {
                 }
             }
 
-            
+
             Program.listaPedidos.RemoveAt(pos);
 
             Program.numeroPedido -= 1;
@@ -210,6 +214,39 @@ namespace Lanchonete.telas {
             else {
                 MessageBox.Show("Código de pedido inválido!");
             }
+        }
+
+        private void AlterarPedidoBotao_Click(object sender, EventArgs e) {
+
+            try {
+                Pedido pedidoTeste = Program.listaPedidos[int.Parse(codigoPedidoAlteracaoTextBox.Text)-1];
+                incluirBotao.Enabled = true;
+                excluirBotao.Enabled = true;
+                ConcluirAlterar.Enabled = true;
+                codigoPedidoAlteracaoTextBox.Enabled = false;
+            }
+            catch (Exception ex) {
+                MessageBox.Show("Código de pedido inválido! \n\n" + ex.Message);
+            }
+
+            
+        }
+
+        private void ConcluirAlterar_Click(object sender, EventArgs e) {
+            incluirBotao.Enabled = false;
+            excluirBotao.Enabled = false;
+            ConcluirAlterar.Enabled = false;
+            codigoPedidoAlteracaoTextBox.Enabled = true;
+        }
+
+        private void incluirBotao_Click(object sender, EventArgs e) {
+            CadastroItemPedido janelaCadastroItemPedido = new CadastroItemPedido(int.Parse(codigoPedidoAlteracaoTextBox.Text));
+            janelaCadastroItemPedido.ShowDialog();
+        }
+
+        private void excluirBotao_Click(object sender, EventArgs e) {
+            ExcluirItem janelaExcluirItem = new ExcluirItem(int.Parse(codigoPedidoAlteracaoTextBox.Text));
+            janelaExcluirItem.ShowDialog();
         }
     }
 }

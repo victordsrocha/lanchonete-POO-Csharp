@@ -55,6 +55,7 @@
     <Compile Include="Entregador.cs" />
     <Compile Include="ItemCardapio.cs" />
     <Compile Include="ItemPedido.cs" />
+    <Compile Include="ModelException.cs" />
     <Compile Include="Pedido.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,17 +83,17 @@
     <Compile Include="telas\CadastroProduto.Designer.cs">
       <DependentUpon>CadastroProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="telas\CardapioCompleto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="telas\CardapioCompleto.Designer.cs">
-      <DependentUpon>CardapioCompleto.cs</DependentUpon>
-    </Compile>
     <Compile Include="telas\CardapioCompletoList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="telas\CardapioCompletoList.Designer.cs">
       <DependentUpon>CardapioCompletoList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telas\ExcluirItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas\ExcluirItem.Designer.cs">
+      <DependentUpon>ExcluirItem.cs</DependentUpon>
     </Compile>
     <Compile Include="telas\Hunger.cs">
       <SubType>Form</SubType>
@@ -100,11 +101,11 @@
     <Compile Include="telas\Hunger.Designer.cs">
       <DependentUpon>Hunger.cs</DependentUpon>
     </Compile>
-    <Compile Include="telas\MostrarCliente.cs">
+    <Compile Include="telas\MostrarClienteList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="telas\MostrarCliente.Designer.cs">
-      <DependentUpon>MostrarCliente.cs</DependentUpon>
+    <Compile Include="telas\MostrarClienteList.Designer.cs">
+      <DependentUpon>MostrarClienteList.cs</DependentUpon>
     </Compile>
     <Compile Include="telas\MostrarEntregadores.cs">
       <SubType>Form</SubType>
@@ -151,17 +152,17 @@
     <EmbeddedResource Include="telas\CadastroProduto.resx">
       <DependentUpon>CadastroProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="telas\CardapioCompleto.resx">
-      <DependentUpon>CardapioCompleto.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="telas\CardapioCompletoList.resx">
       <DependentUpon>CardapioCompletoList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telas\ExcluirItem.resx">
+      <DependentUpon>ExcluirItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="telas\Hunger.resx">
       <DependentUpon>Hunger.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="telas\MostrarCliente.resx">
-      <DependentUpon>MostrarCliente.cs</DependentUpon>
+    <EmbeddedResource Include="telas\MostrarClienteList.resx">
+      <DependentUpon>MostrarClienteList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="telas\MostrarEntregadores.resx">
       <DependentUpon>MostrarEntregadores.cs</DependentUpon>
