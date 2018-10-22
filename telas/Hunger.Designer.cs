@@ -41,6 +41,8 @@
             this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarPedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nãoEntreguesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatorioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pedidosDoDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.atualizaValorTextButton = new System.Windows.Forms.Button();
             this.codigoPedidoTextBox = new System.Windows.Forms.TextBox();
@@ -79,8 +81,7 @@
             this.AlterarPedidoBotao = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.codigoPedidoAlteracaoTextBox = new System.Windows.Forms.TextBox();
-            this.relatorioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pedidosDoDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.entregadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -232,6 +233,23 @@
             this.nãoEntreguesToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.nãoEntreguesToolStripMenuItem.Text = "todos";
             this.nãoEntreguesToolStripMenuItem.Click += new System.EventHandler(this.nãoEntreguesToolStripMenuItem_Click);
+            // 
+            // relatorioToolStripMenuItem
+            // 
+            this.relatorioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pedidosDoDiaToolStripMenuItem,
+            this.entregadoresToolStripMenuItem});
+            this.relatorioToolStripMenuItem.Name = "relatorioToolStripMenuItem";
+            this.relatorioToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.relatorioToolStripMenuItem.Text = "Relatorio";
+            this.relatorioToolStripMenuItem.Click += new System.EventHandler(this.relatorioToolStripMenuItem_Click);
+            // 
+            // pedidosDoDiaToolStripMenuItem
+            // 
+            this.pedidosDoDiaToolStripMenuItem.Name = "pedidosDoDiaToolStripMenuItem";
+            this.pedidosDoDiaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pedidosDoDiaToolStripMenuItem.Text = "Pedidos do dia";
+            this.pedidosDoDiaToolStripMenuItem.Click += new System.EventHandler(this.pedidosDoDiaToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -631,21 +649,12 @@
             this.codigoPedidoAlteracaoTextBox.Size = new System.Drawing.Size(100, 20);
             this.codigoPedidoAlteracaoTextBox.TabIndex = 0;
             // 
-            // relatorioToolStripMenuItem
+            // entregadoresToolStripMenuItem
             // 
-            this.relatorioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pedidosDoDiaToolStripMenuItem});
-            this.relatorioToolStripMenuItem.Name = "relatorioToolStripMenuItem";
-            this.relatorioToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.relatorioToolStripMenuItem.Text = "Relatorio";
-            this.relatorioToolStripMenuItem.Click += new System.EventHandler(this.relatorioToolStripMenuItem_Click);
-            // 
-            // pedidosDoDiaToolStripMenuItem
-            // 
-            this.pedidosDoDiaToolStripMenuItem.Name = "pedidosDoDiaToolStripMenuItem";
-            this.pedidosDoDiaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.pedidosDoDiaToolStripMenuItem.Text = "Pedidos do dia";
-            this.pedidosDoDiaToolStripMenuItem.Click += new System.EventHandler(this.pedidosDoDiaToolStripMenuItem_Click);
+            this.entregadoresToolStripMenuItem.Name = "entregadoresToolStripMenuItem";
+            this.entregadoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.entregadoresToolStripMenuItem.Text = "Entregadores";
+            this.entregadoresToolStripMenuItem.Click += new System.EventHandler(this.entregadoresToolStripMenuItem_Click);
             // 
             // Hunger
             // 
@@ -733,5 +742,6 @@
         private System.Windows.Forms.Button cadastrarEntregaBotao;
         private System.Windows.Forms.ToolStripMenuItem relatorioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidosDoDiaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem entregadoresToolStripMenuItem;
     }
 }

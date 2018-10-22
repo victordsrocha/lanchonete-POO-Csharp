@@ -360,6 +360,10 @@ namespace Lanchonete.telas {
             int codPedido = Program.listaEntregadores[codEntreg - 1].codigoPedidoEntrega;
 
             int pos = Auxiliar.identificaPosicaoPedido(codPedido);
+
+            //pedido é adicionado a lista de pedidos ENTREGUES do dia do entregador
+            Program.listaEntregadores[codEntreg - 1].listaPedidosEntreguesHoje.Add(Auxiliar.identificaPedido(codPedido));
+
             double comissaoEntrega = 0.05*(Program.listaPedidos[pos].valorTotal());
             Program.listaEntregadores[codEntreg - 1].comissao += comissaoEntrega;
 
@@ -376,7 +380,7 @@ namespace Lanchonete.telas {
         }
 
         private void relatorioToolStripMenuItem_Click(object sender, EventArgs e) {
-            
+            //
         }
 
         private void pedidosDoDiaToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -384,6 +388,14 @@ namespace Lanchonete.telas {
                                                    dateTimePicker1.Value.Month,
                                                    dateTimePicker1.Value.Year);
             janelaRelatorioPedidosDoDia.ShowDialog();
+        }
+
+        private void entregadoresToolStripMenuItem_Click(object sender, EventArgs e) {
+            RelatorioEntregadores janelaRelatorioEntregadores = new RelatorioEntregadores(dateTimePicker1.Value.Day,
+                                                   dateTimePicker1.Value.Month,
+                                                   dateTimePicker1.Value.Year);
+
+            janelaRelatorioEntregadores.ShowDialog();
         }
     }
 }

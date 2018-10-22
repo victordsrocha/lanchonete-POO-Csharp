@@ -13,6 +13,7 @@ namespace Lanchonete {
         public bool ocupado { get; set; }
         public int codigoPedidoEntrega { get; set; }
         public double comissao { get; set; }
+        public List<Pedido> listaPedidosEntreguesHoje { get; set; }
 
         public Entregador(int codigo, string nome, string placaDoVeiculo) {
             ocupado = false;
@@ -20,6 +21,7 @@ namespace Lanchonete {
             this.nome = nome;
             this.placaDoVeiculo = placaDoVeiculo;
             comissao = 0;
+            listaPedidosEntreguesHoje = new List<Pedido>();
         }
 
         public override string ToString() {
