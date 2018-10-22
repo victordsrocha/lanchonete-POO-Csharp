@@ -13,6 +13,7 @@ namespace Lanchonete {
         public string telefone { get; set; }
         public string referencia { get; set; }
         public bool ativo { get; set; }
+        public int devolucoes { get; set; }
 
         public Cliente(int codigo, string nome, string endereco, string telefone, string referencia) {
             this.codigo = codigo;
@@ -21,25 +22,9 @@ namespace Lanchonete {
             this.endereco = endereco;
             this.referencia = referencia;
             this.ativo = true;
+            devolucoes = 0;
         }
 
-        public string status() {
-            if (ativo) {
-                return "ativo";
-            }
-            else {
-                return "desativado";
-            }
-        }
-
-        public override string ToString() {
-            return "Cliente de código " + codigo + ":{0}{0}"
-                + "\tnome: " + nome + "{0}"
-                + "\ttelefone: " + telefone + "{0}"
-                + "\tendereço: " + endereco + "{0}"
-                + "\treferência: " + referencia + "{0}"
-                + "\tstatus: " + status();
-
-        }
+        
     }
 }

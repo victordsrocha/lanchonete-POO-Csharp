@@ -10,19 +10,33 @@ namespace Lanchonete {
         public int codigo { get; set; }
         public string nome { get; set; }
         public string placaDoVeiculo { get; set; }
-        public List<Pedido> pedidos { get; set; }
+        public bool ocupado { get; set; }
+        public int codigoPedidoEntrega { get; set; }
+        public double comissao { get; set; }
 
         public Entregador(int codigo, string nome, string placaDoVeiculo) {
+            ocupado = false;
             this.codigo = codigo;
             this.nome = nome;
             this.placaDoVeiculo = placaDoVeiculo;
-            pedidos = new List<Pedido>();
+            comissao = 0;
         }
 
         public override string ToString() {
-            return "Entregador de código " + codigo + ":{0}{0}"
+            string s = "Entregador de código " + codigo + ":{0}{0}"
                 + "\tnome: " + nome + "{0}"
-                + "\tplaca: " + placaDoVeiculo;
+                + "\tplaca: " + placaDoVeiculo + "{0}"
+                + "\tcomissao: " + comissao.ToString("F2") + "{0}";
+
+            if (this.ocupado) {
+                s = s + "\tocupado = sim" + "{0}"
+                    + "\tcodigo do pedido a ser entregue: " + codigoPedidoEntrega;
+            }
+            else {
+                s = s + "\tocupado = não";
+            }
+
+            return s;
 
         }
     }

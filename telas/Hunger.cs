@@ -81,40 +81,45 @@ namespace Lanchonete.telas {
         private void iniciarPedidoButton_Click(object sender, EventArgs e) {
             int codigoIniciado = int.Parse(codigoClienteTextBox.Text);
             if (codigoIniciado <= Program.listaClientes.Count && codigoIniciado >= 1) {
-                dateTimePicker1.Value = DateTime.Now;
-                dateTimePicker1.Refresh();
 
-                int ano = dateTimePicker1.Value.Year;
-                int mes = dateTimePicker1.Value.Month;
-                int dia = dateTimePicker1.Value.Day;
-                int hora = dateTimePicker1.Value.Hour;
-                int minuto = dateTimePicker1.Value.Minute;
-                int segundo = dateTimePicker1.Value.Second;
-                DateTime datetimeIniciado = new DateTime(ano, mes, dia, hora, minuto, segundo);
+                if (Program.listaClientes[codigoIniciado - 1].ativo) {
+                    dateTimePicker1.Value = DateTime.Now;
+                    dateTimePicker1.Refresh();
+
+                    int ano = dateTimePicker1.Value.Year;
+                    int mes = dateTimePicker1.Value.Month;
+                    int dia = dateTimePicker1.Value.Day;
+                    int hora = dateTimePicker1.Value.Hour;
+                    int minuto = dateTimePicker1.Value.Minute;
+                    int segundo = dateTimePicker1.Value.Second;
+                    DateTime datetimeIniciado = new DateTime(ano, mes, dia, hora, minuto, segundo);
 
 
 
-                Cliente clientePedidoIniciado = Auxiliar.identificaCliente(codigoIniciado);
+                    Cliente clientePedidoIniciado = Auxiliar.identificaCliente(codigoIniciado);
 
-                Pedido pedidoIniciado = new Pedido(clientePedidoIniciado, datetimeIniciado);
-                Program.listaPedidos.Add(pedidoIniciado);
+                    Pedido pedidoIniciado = new Pedido(clientePedidoIniciado, datetimeIniciado);
+                    Program.listaPedidos.Add(pedidoIniciado);
 
-                codigoPedidoTextBox.Text = Convert.ToString(pedidoIniciado.codigo);
+                    codigoPedidoTextBox.Text = Convert.ToString(pedidoIniciado.codigo);
 
-                //liberando botoes de edição do pedido
-                CadastrarItensPedidoTextButton.Enabled = true;
-                visualizarPedidoTextButton.Enabled = true;
-                atualizaValorTextButton.Enabled = true;
-                ConfirmarPedidoButton.Enabled = true;
-                cancelarPedidoTextButton.Enabled = true;
+                    //liberando botoes de edição do pedido
+                    CadastrarItensPedidoTextButton.Enabled = true;
+                    visualizarPedidoTextButton.Enabled = true;
+                    atualizaValorTextButton.Enabled = true;
+                    ConfirmarPedidoButton.Enabled = true;
+                    cancelarPedidoTextButton.Enabled = true;
 
-                //bloqueando botoes de inicio de pedido
-                iniciarPedidoButton.Enabled = false;
-                codigoClienteTextBox.Enabled = false;
+                    //bloqueando botoes de inicio de pedido
+                    iniciarPedidoButton.Enabled = false;
+                    codigoClienteTextBox.Enabled = false;
+                }
+                else {
+                    MessageBox.Show("Este cliente foi desativado!");
+                }
             }
             else {
                 MessageBox.Show("Digite um código válido de cliente");
-
             }
         }
 
@@ -260,6 +265,102 @@ namespace Lanchonete.telas {
             int pos = Auxiliar.identificaPosicaoPedido(int.Parse(codigoPedidoAlteracaoTextBox.Text));
             ExcluirItem janelaExcluirItem = new ExcluirItem(pos);
             janelaExcluirItem.ShowDialog();
+        }
+
+        private void cadastrarEntregaBotao_Click(object sender, EventArgs e) {
+            codigoPedidoCadastroEntregaTextBox.Enabled = true;
+            codigoEntregadorCadastroEntregaTextBox.Enabled = true;
+            enviarEntregadorBotao.Enabled = true;
+            cancelarCadastroEntregaBotao.Enabled = true;
+        }
+
+        private void cancelarCadastroEntregaBotao_Click(object sender, EventArgs e) {
+            codigoPedidoCadastroEntregaTextBox.Enabled = false;
+            codigoEntregadorCadastroEntregaTextBox.Enabled = false;
+            enviarEntregadorBotao.Enabled = false;
+            cancelarCadastroEntregaBotao.Enabled = false;
+            codigoEntregadorCadastroEntregaTextBox.Clear();
+            codigoPedidoCadastroEntregaTextBox.Clear();
+        }
+
+        private void enviarEntregadorBotao_Click(object sender, EventArgs e) {
+
+            int codEntreg = int.Parse(codigoEntregadorCadastroEntregaTextBox.Text);
+            int codPedido = int.Parse(codigoPedidoCadastroEntregaTextBox.Text);
+            int pos = Auxiliar.identificaPosicaoPedido(codPedido);
+
+            try {
+                Pedido pedidoTeste = Program.listaPedidos[pos];
+
+                try {
+                    Entregador entregadorTeste = Program.listaEntregadores[codEntreg-1];
+
+                    if (entregadorTeste.ocupado) {
+                        MessageBox.Show("O entregador já está ocupado!");
+                    }
+                    else {
+                        Program.listaEntregadores[codEntreg - 1].codigoPedidoEntrega = codPedido;
+                        Program.listaEntregadores[codEntreg - 1].ocupado = true;
+                        cancelarCadastroEntregaBotao_Click(sender, e);
+                    }
+                }
+                catch {
+                    MessageBox.Show("Código de entregador inválido");
+                }
+
+            }
+            catch {
+                MessageBox.Show("Código de pedido inválido");
+            }
+
+        }
+
+        private void registrarSituacaoBotao_Click(object sender, EventArgs e) {
+            codigoEntregadorRegSituacaoTextBox.Enabled = true;
+            sucessoRegistrarSituacaoBotao.Enabled = true;
+            falhaRegistrarSituacaoBotao.Enabled = true;
+        }
+
+        private void falhaRegistrarSituacaoBotao_Click(object sender, EventArgs e) {
+
+            int codEntreg = int.Parse(codigoEntregadorRegSituacaoTextBox.Text);
+            int codPedido = Program.listaEntregadores[codEntreg - 1].codigoPedidoEntrega;
+
+            int pos = Auxiliar.identificaPosicaoPedido(codPedido);
+
+            Program.listaPedidos[pos].clientePedido.devolucoes += 1;
+            if (Program.listaPedidos[pos].clientePedido.devolucoes == 3) {
+                Program.listaPedidos[pos].clientePedido.ativo = false;
+            }
+
+            Program.listaEntregadores[codEntreg - 1].codigoPedidoEntrega = 0;
+            Program.listaEntregadores[codEntreg - 1].ocupado = false;
+
+            codigoEntregadorRegSituacaoTextBox.Enabled = false;
+            sucessoRegistrarSituacaoBotao.Enabled = false;
+            falhaRegistrarSituacaoBotao.Enabled = false;
+            codigoEntregadorRegSituacaoTextBox.Clear();
+        }
+
+        private void sucessoRegistrarSituacaoBotao_Click(object sender, EventArgs e) {
+
+            int codEntreg = int.Parse(codigoEntregadorRegSituacaoTextBox.Text);
+            int codPedido = Program.listaEntregadores[codEntreg - 1].codigoPedidoEntrega;
+
+            int pos = Auxiliar.identificaPosicaoPedido(codPedido);
+            double comissaoEntrega = 0.05*(Program.listaPedidos[pos].valorTotal());
+            Program.listaEntregadores[codEntreg - 1].comissao += comissaoEntrega;
+
+            Program.listaEntregadores[codEntreg - 1].codigoPedidoEntrega = 0;
+            Program.listaEntregadores[codEntreg - 1].ocupado = false;
+
+            Program.listaPedidos[pos].situacao = true;
+
+
+            codigoEntregadorRegSituacaoTextBox.Enabled = false;
+            sucessoRegistrarSituacaoBotao.Enabled = false;
+            falhaRegistrarSituacaoBotao.Enabled = false;
+            codigoEntregadorRegSituacaoTextBox.Clear();
         }
     }
 }
