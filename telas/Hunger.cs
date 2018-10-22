@@ -374,5 +374,16 @@ namespace Lanchonete.telas {
             falhaRegistrarSituacaoBotao.Enabled = false;
             codigoEntregadorRegSituacaoTextBox.Clear();
         }
+
+        private void relatorioToolStripMenuItem_Click(object sender, EventArgs e) {
+            
+        }
+
+        private void pedidosDoDiaToolStripMenuItem_Click(object sender, EventArgs e) {
+            RelatorioPedidosDoDia janelaRelatorioPedidosDoDia = new RelatorioPedidosDoDia(dateTimePicker1.Value.Day,
+                                                   dateTimePicker1.Value.Month,
+                                                   dateTimePicker1.Value.Year);
+            janelaRelatorioPedidosDoDia.ShowDialog();
+        }
     }
 }

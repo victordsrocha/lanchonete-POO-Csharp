@@ -81,6 +81,20 @@ namespace Lanchonete {
             return pos;
         }
 
+        public static string data(DateTime dateTime) {
+            string dia = dateTime.Day + "/";
+            string mes = dateTime.Month + "/";
+            string ano = dateTime.Year + "";
+            return dia + mes + ano;
+        }
+
+        public static string hora(DateTime dateTime) {
+            string hora = dateTime.Hour+":";
+            string minutos = dateTime.Minute+":";
+            string segundos = dateTime.Second + "";
+            return hora + minutos + segundos;
+        }
+
         //recebe codigo e retorna string categoria
         public static string identificaCategoria(int codigo) {
             if(codigo>=101 && codigo < 200) {

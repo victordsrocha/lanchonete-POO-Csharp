@@ -57,6 +57,14 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.sucessoRegistrarSituacaoBotao = new System.Windows.Forms.Button();
+            this.falhaRegistrarSituacaoBotao = new System.Windows.Forms.Button();
+            this.codigoEntregadorRegSituacaoTextBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.registrarSituacaoBotao = new System.Windows.Forms.Button();
+            this.codigoPedidoCadastroEntregaTextBox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cadastrarEntregaBotao = new System.Windows.Forms.Button();
             this.contadorPedidosPendentes = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.enviarEntregadorBotao = new System.Windows.Forms.Button();
@@ -71,14 +79,8 @@
             this.AlterarPedidoBotao = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.codigoPedidoAlteracaoTextBox = new System.Windows.Forms.TextBox();
-            this.cadastrarEntregaBotao = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.codigoPedidoCadastroEntregaTextBox = new System.Windows.Forms.TextBox();
-            this.registrarSituacaoBotao = new System.Windows.Forms.Button();
-            this.sucessoRegistrarSituacaoBotao = new System.Windows.Forms.Button();
-            this.falhaRegistrarSituacaoBotao = new System.Windows.Forms.Button();
-            this.codigoEntregadorRegSituacaoTextBox = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.relatorioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pedidosDoDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -91,7 +93,8 @@
             this.cardapioToolStripMenuItem,
             this.clienteToolStripMenuItem,
             this.entregadorToolStripMenuItem,
-            this.pedidosToolStripMenuItem});
+            this.pedidosToolStripMenuItem,
+            this.relatorioToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -220,13 +223,13 @@
             this.mostrarPedidosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nãoEntreguesToolStripMenuItem});
             this.mostrarPedidosToolStripMenuItem.Name = "mostrarPedidosToolStripMenuItem";
-            this.mostrarPedidosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mostrarPedidosToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.mostrarPedidosToolStripMenuItem.Text = "Mostrar pedidos";
             // 
             // nãoEntreguesToolStripMenuItem
             // 
             this.nãoEntreguesToolStripMenuItem.Name = "nãoEntreguesToolStripMenuItem";
-            this.nãoEntreguesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nãoEntreguesToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.nãoEntreguesToolStripMenuItem.Text = "todos";
             this.nãoEntreguesToolStripMenuItem.Click += new System.EventHandler(this.nãoEntreguesToolStripMenuItem_Click);
             // 
@@ -410,6 +413,82 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Entregas";
             // 
+            // sucessoRegistrarSituacaoBotao
+            // 
+            this.sucessoRegistrarSituacaoBotao.Enabled = false;
+            this.sucessoRegistrarSituacaoBotao.Location = new System.Drawing.Point(51, 277);
+            this.sucessoRegistrarSituacaoBotao.Name = "sucessoRegistrarSituacaoBotao";
+            this.sucessoRegistrarSituacaoBotao.Size = new System.Drawing.Size(137, 23);
+            this.sucessoRegistrarSituacaoBotao.TabIndex = 16;
+            this.sucessoRegistrarSituacaoBotao.Text = "sucesso";
+            this.sucessoRegistrarSituacaoBotao.UseVisualStyleBackColor = true;
+            this.sucessoRegistrarSituacaoBotao.Click += new System.EventHandler(this.sucessoRegistrarSituacaoBotao_Click);
+            // 
+            // falhaRegistrarSituacaoBotao
+            // 
+            this.falhaRegistrarSituacaoBotao.Enabled = false;
+            this.falhaRegistrarSituacaoBotao.Location = new System.Drawing.Point(194, 277);
+            this.falhaRegistrarSituacaoBotao.Name = "falhaRegistrarSituacaoBotao";
+            this.falhaRegistrarSituacaoBotao.Size = new System.Drawing.Size(129, 23);
+            this.falhaRegistrarSituacaoBotao.TabIndex = 15;
+            this.falhaRegistrarSituacaoBotao.Text = "falha";
+            this.falhaRegistrarSituacaoBotao.UseVisualStyleBackColor = true;
+            this.falhaRegistrarSituacaoBotao.Click += new System.EventHandler(this.falhaRegistrarSituacaoBotao_Click);
+            // 
+            // codigoEntregadorRegSituacaoTextBox
+            // 
+            this.codigoEntregadorRegSituacaoTextBox.Enabled = false;
+            this.codigoEntregadorRegSituacaoTextBox.Location = new System.Drawing.Point(164, 241);
+            this.codigoEntregadorRegSituacaoTextBox.Name = "codigoEntregadorRegSituacaoTextBox";
+            this.codigoEntregadorRegSituacaoTextBox.Size = new System.Drawing.Size(159, 20);
+            this.codigoEntregadorRegSituacaoTextBox.TabIndex = 14;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(49, 245);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(109, 13);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Código do entregador";
+            // 
+            // registrarSituacaoBotao
+            // 
+            this.registrarSituacaoBotao.Location = new System.Drawing.Point(51, 209);
+            this.registrarSituacaoBotao.Name = "registrarSituacaoBotao";
+            this.registrarSituacaoBotao.Size = new System.Drawing.Size(272, 23);
+            this.registrarSituacaoBotao.TabIndex = 12;
+            this.registrarSituacaoBotao.Text = "registrar situação da entrega";
+            this.registrarSituacaoBotao.UseVisualStyleBackColor = true;
+            this.registrarSituacaoBotao.Click += new System.EventHandler(this.registrarSituacaoBotao_Click);
+            // 
+            // codigoPedidoCadastroEntregaTextBox
+            // 
+            this.codigoPedidoCadastroEntregaTextBox.Enabled = false;
+            this.codigoPedidoCadastroEntregaTextBox.Location = new System.Drawing.Point(163, 96);
+            this.codigoPedidoCadastroEntregaTextBox.Name = "codigoPedidoCadastroEntregaTextBox";
+            this.codigoPedidoCadastroEntregaTextBox.Size = new System.Drawing.Size(159, 20);
+            this.codigoPedidoCadastroEntregaTextBox.TabIndex = 11;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(48, 99);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 13);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "Código do pedido";
+            // 
+            // cadastrarEntregaBotao
+            // 
+            this.cadastrarEntregaBotao.Location = new System.Drawing.Point(50, 63);
+            this.cadastrarEntregaBotao.Name = "cadastrarEntregaBotao";
+            this.cadastrarEntregaBotao.Size = new System.Drawing.Size(272, 23);
+            this.cadastrarEntregaBotao.TabIndex = 9;
+            this.cadastrarEntregaBotao.Text = "cadastrar entrega";
+            this.cadastrarEntregaBotao.UseVisualStyleBackColor = true;
+            this.cadastrarEntregaBotao.Click += new System.EventHandler(this.cadastrarEntregaBotao_Click);
+            // 
             // contadorPedidosPendentes
             // 
             this.contadorPedidosPendentes.Location = new System.Drawing.Point(152, 28);
@@ -552,81 +631,21 @@
             this.codigoPedidoAlteracaoTextBox.Size = new System.Drawing.Size(100, 20);
             this.codigoPedidoAlteracaoTextBox.TabIndex = 0;
             // 
-            // cadastrarEntregaBotao
+            // relatorioToolStripMenuItem
             // 
-            this.cadastrarEntregaBotao.Location = new System.Drawing.Point(50, 63);
-            this.cadastrarEntregaBotao.Name = "cadastrarEntregaBotao";
-            this.cadastrarEntregaBotao.Size = new System.Drawing.Size(272, 23);
-            this.cadastrarEntregaBotao.TabIndex = 9;
-            this.cadastrarEntregaBotao.Text = "cadastrar entrega";
-            this.cadastrarEntregaBotao.UseVisualStyleBackColor = true;
-            this.cadastrarEntregaBotao.Click += new System.EventHandler(this.cadastrarEntregaBotao_Click);
+            this.relatorioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pedidosDoDiaToolStripMenuItem});
+            this.relatorioToolStripMenuItem.Name = "relatorioToolStripMenuItem";
+            this.relatorioToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.relatorioToolStripMenuItem.Text = "Relatorio";
+            this.relatorioToolStripMenuItem.Click += new System.EventHandler(this.relatorioToolStripMenuItem_Click);
             // 
-            // label9
+            // pedidosDoDiaToolStripMenuItem
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(48, 99);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 13);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Código do pedido";
-            // 
-            // codigoPedidoCadastroEntregaTextBox
-            // 
-            this.codigoPedidoCadastroEntregaTextBox.Enabled = false;
-            this.codigoPedidoCadastroEntregaTextBox.Location = new System.Drawing.Point(163, 96);
-            this.codigoPedidoCadastroEntregaTextBox.Name = "codigoPedidoCadastroEntregaTextBox";
-            this.codigoPedidoCadastroEntregaTextBox.Size = new System.Drawing.Size(159, 20);
-            this.codigoPedidoCadastroEntregaTextBox.TabIndex = 11;
-            // 
-            // registrarSituacaoBotao
-            // 
-            this.registrarSituacaoBotao.Location = new System.Drawing.Point(51, 209);
-            this.registrarSituacaoBotao.Name = "registrarSituacaoBotao";
-            this.registrarSituacaoBotao.Size = new System.Drawing.Size(272, 23);
-            this.registrarSituacaoBotao.TabIndex = 12;
-            this.registrarSituacaoBotao.Text = "registrar situação da entrega";
-            this.registrarSituacaoBotao.UseVisualStyleBackColor = true;
-            this.registrarSituacaoBotao.Click += new System.EventHandler(this.registrarSituacaoBotao_Click);
-            // 
-            // sucessoRegistrarSituacaoBotao
-            // 
-            this.sucessoRegistrarSituacaoBotao.Enabled = false;
-            this.sucessoRegistrarSituacaoBotao.Location = new System.Drawing.Point(51, 277);
-            this.sucessoRegistrarSituacaoBotao.Name = "sucessoRegistrarSituacaoBotao";
-            this.sucessoRegistrarSituacaoBotao.Size = new System.Drawing.Size(137, 23);
-            this.sucessoRegistrarSituacaoBotao.TabIndex = 16;
-            this.sucessoRegistrarSituacaoBotao.Text = "sucesso";
-            this.sucessoRegistrarSituacaoBotao.UseVisualStyleBackColor = true;
-            this.sucessoRegistrarSituacaoBotao.Click += new System.EventHandler(this.sucessoRegistrarSituacaoBotao_Click);
-            // 
-            // falhaRegistrarSituacaoBotao
-            // 
-            this.falhaRegistrarSituacaoBotao.Enabled = false;
-            this.falhaRegistrarSituacaoBotao.Location = new System.Drawing.Point(194, 277);
-            this.falhaRegistrarSituacaoBotao.Name = "falhaRegistrarSituacaoBotao";
-            this.falhaRegistrarSituacaoBotao.Size = new System.Drawing.Size(129, 23);
-            this.falhaRegistrarSituacaoBotao.TabIndex = 15;
-            this.falhaRegistrarSituacaoBotao.Text = "falha";
-            this.falhaRegistrarSituacaoBotao.UseVisualStyleBackColor = true;
-            this.falhaRegistrarSituacaoBotao.Click += new System.EventHandler(this.falhaRegistrarSituacaoBotao_Click);
-            // 
-            // codigoEntregadorRegSituacaoTextBox
-            // 
-            this.codigoEntregadorRegSituacaoTextBox.Enabled = false;
-            this.codigoEntregadorRegSituacaoTextBox.Location = new System.Drawing.Point(164, 241);
-            this.codigoEntregadorRegSituacaoTextBox.Name = "codigoEntregadorRegSituacaoTextBox";
-            this.codigoEntregadorRegSituacaoTextBox.Size = new System.Drawing.Size(159, 20);
-            this.codigoEntregadorRegSituacaoTextBox.TabIndex = 14;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(49, 245);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(109, 13);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "Código do entregador";
+            this.pedidosDoDiaToolStripMenuItem.Name = "pedidosDoDiaToolStripMenuItem";
+            this.pedidosDoDiaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pedidosDoDiaToolStripMenuItem.Text = "Pedidos do dia";
+            this.pedidosDoDiaToolStripMenuItem.Click += new System.EventHandler(this.pedidosDoDiaToolStripMenuItem_Click);
             // 
             // Hunger
             // 
@@ -712,5 +731,7 @@
         private System.Windows.Forms.TextBox codigoPedidoCadastroEntregaTextBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button cadastrarEntregaBotao;
+        private System.Windows.Forms.ToolStripMenuItem relatorioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pedidosDoDiaToolStripMenuItem;
     }
 }
