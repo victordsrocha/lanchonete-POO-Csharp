@@ -39,7 +39,7 @@ namespace Lanchonete.telas {
                 item.SubItems.Add(pedido.clientePedido.nome);
                 item.SubItems.Add(pedido.dateTimePedido + "");
                 if (pedido.situacao) {
-                    item.SubItems.Add("entregue");
+                    item.SubItems.Add("atendido");
                 }
                 else {
                     item.SubItems.Add("pendente");
@@ -58,7 +58,7 @@ namespace Lanchonete.telas {
                     item.SubItems.Add(pedido.clientePedido.nome);
                     item.SubItems.Add(pedido.dateTimePedido + "");
                     if (pedido.situacao) {
-                        item.SubItems.Add("entregue");
+                        item.SubItems.Add("atendido");
                     }
                     else {
                         item.SubItems.Add("pendente");
@@ -78,7 +78,7 @@ namespace Lanchonete.telas {
                     item.SubItems.Add(pedido.clientePedido.nome);
                     item.SubItems.Add(pedido.dateTimePedido + "");
                     if (pedido.situacao) {
-                        item.SubItems.Add("entregue");
+                        item.SubItems.Add("atendido");
                     }
                     else {
                         item.SubItems.Add("pendente");

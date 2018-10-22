@@ -198,32 +198,37 @@ namespace Lanchonete.telas {
 
         private void CancelarPedidoCadastradoButton_Click(object sender, EventArgs e) {
 
-            contadorPedidosPendentes.Text = (int.Parse(contadorPedidosPendentes.Text) - 1) + "";
+            
 
             int codigo = int.Parse(codigoPedidoAlteracaoTextBox.Text);
             int pos = Program.listaPedidos.FindIndex(x => x.codigo == codigo);
 
             if (pos != -1) {
+                if (!Program.listaPedidos[pos].situacao) {
+                    //retornar bebidas para o estoque!
+                    for (int i = 0; i < Program.listaPedidos[pos].itens.Count; i++) {
+                        if (Program.listaPedidos[pos].itens[i].item is cardapio.Bebida) {
+                            string nomeBebidaRepos = Program.listaPedidos[pos].itens[i].item.nome;
+                            int qtdBebidaRepos = Program.listaPedidos[pos].itens[i].qtd;
+                            int codigoBebidaRepos = Program.listaPedidos[pos].itens[i].item.codigo;
 
-                //retornar bebidas para o estoque!
-                for (int i = 0; i < Program.listaPedidos[pos].itens.Count; i++) {
-                    if (Program.listaPedidos[pos].itens[i].item is cardapio.Bebida) {
-                        string nomeBebidaRepos = Program.listaPedidos[pos].itens[i].item.nome;
-                        int qtdBebidaRepos = Program.listaPedidos[pos].itens[i].qtd;
-                        int codigoBebidaRepos = Program.listaPedidos[pos].itens[i].item.codigo;
+                            MessageBox.Show(qtdBebidaRepos + " " + nomeBebidaRepos + " voltaram para o estoque!");
 
-                        MessageBox.Show(qtdBebidaRepos + " " + nomeBebidaRepos + " voltaram para o estoque!");
-
-                        int posBebida = Program.listaBebida.FindIndex(x => x.codigo == codigoBebidaRepos);
-                        cardapio.Bebida bebida = (cardapio.Bebida)Program.listaBebida[posBebida];
-                        bebida.estoque += qtdBebidaRepos;
-                        Program.listaBebida[posBebida] = bebida;
+                            int posBebida = Program.listaBebida.FindIndex(x => x.codigo == codigoBebidaRepos);
+                            cardapio.Bebida bebida = (cardapio.Bebida)Program.listaBebida[posBebida];
+                            bebida.estoque += qtdBebidaRepos;
+                            Program.listaBebida[posBebida] = bebida;
+                        }
                     }
+
+
+                    Program.listaPedidos.RemoveAt(pos);
+                    contadorPedidosPendentes.Text = (int.Parse(contadorPedidosPendentes.Text) - 1) + "";
+                    MessageBox.Show("Pedido " + codigo + " deletado");
                 }
-
-
-                Program.listaPedidos.RemoveAt(pos);
-                MessageBox.Show("Pedido " + codigo + " deletado");
+                else {
+                    MessageBox.Show("Este pedido já foi entregue!");
+                }
             }
             else {
                 MessageBox.Show("Código de pedido inválido!");
@@ -236,10 +241,15 @@ namespace Lanchonete.telas {
 
             try {
                 Pedido pedidoTeste = Program.listaPedidos[pos];
-                incluirBotao.Enabled = true;
-                excluirBotao.Enabled = true;
-                ConcluirAlterar.Enabled = true;
-                codigoPedidoAlteracaoTextBox.Enabled = false;
+                if (!pedidoTeste.situacao) {
+                    incluirBotao.Enabled = true;
+                    excluirBotao.Enabled = true;
+                    ConcluirAlterar.Enabled = true;
+                    codigoPedidoAlteracaoTextBox.Enabled = false;
+                }
+                else {
+                    MessageBox.Show("Este pedido já foi entregue!");
+                }
             }
             catch (Exception ex) {
                 MessageBox.Show("Código de pedido inválido! \n\n" + ex.Message);
@@ -343,6 +353,8 @@ namespace Lanchonete.telas {
         }
 
         private void sucessoRegistrarSituacaoBotao_Click(object sender, EventArgs e) {
+
+            contadorPedidosPendentes.Text = (int.Parse(contadorPedidosPendentes.Text) - 1) + "";
 
             int codEntreg = int.Parse(codigoEntregadorRegSituacaoTextBox.Text);
             int codPedido = Program.listaEntregadores[codEntreg - 1].codigoPedidoEntrega;
