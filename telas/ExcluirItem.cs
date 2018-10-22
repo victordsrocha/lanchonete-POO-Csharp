@@ -14,7 +14,7 @@ namespace Lanchonete.telas {
         int pos;
 
         public ExcluirItem(int pos) {
-            this.pos = pos - 1;
+            this.pos = pos;
             InitializeComponent();
         }
 
@@ -33,7 +33,25 @@ namespace Lanchonete.telas {
 
         private void excluirBotao_Click(object sender, EventArgs e) {
             int id = int.Parse(IdTextBox.Text);
-            Program.listaPedidos[pos].itens.RemoveAt(id - 1);
+
+            if (Program.listaPedidos[pos].itens[id - 1].item is cardapio.Bebida) {
+                string nomeBebidaRepos = Program.listaPedidos[pos].itens[id - 1].item.nome;
+                int qtdBebidaRepos = Program.listaPedidos[pos].itens[id - 1].qtd;
+                int codigoBebidaRepos = Program.listaPedidos[pos].itens[id - 1].item.codigo;
+
+                MessageBox.Show(qtdBebidaRepos + " " + nomeBebidaRepos + " voltaram para o estoque!");
+
+                int posBebida = Program.listaBebida.FindIndex(x => x.codigo == codigoBebidaRepos);
+                cardapio.Bebida bebida = (cardapio.Bebida)Program.listaBebida[posBebida];
+                bebida.estoque += qtdBebidaRepos;
+                Program.listaBebida[posBebida] = bebida;
+
+                Program.listaPedidos[pos].itens.RemoveAt(id - 1);
+            }
+            else {
+                Program.listaPedidos[pos].itens.RemoveAt(id - 1);
+            }
+            
 
             listView.Items.Clear();
             ListViewItem item;

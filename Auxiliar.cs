@@ -76,6 +76,29 @@ namespace Lanchonete {
             return P;
         }
 
+        public static int identificaPosicaoPedido(int codigo) {
+            int pos = Program.listaPedidos.FindIndex(x => x.codigo == codigo);
+            return pos;
+        }
+
+        //recebe codigo e retorna string categoria
+        public static string identificaCategoria(int codigo) {
+            if(codigo>=101 && codigo < 200) {
+                return "lanche";
+            }
+            else if(codigo>=201 && codigo < 300) {
+                return "refeição";
+            }
+            else if(codigo>=301 && codigo< 400) {
+                return "bebida";
+            }
+            else if(codigo>=401 && codigo < 500) {
+                return "sobremesa";
+            }
+            else {
+                return "";
+            }
+        }
     }
 
 }

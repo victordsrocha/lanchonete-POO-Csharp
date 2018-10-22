@@ -89,6 +89,12 @@
     <Compile Include="telas\CardapioCompletoList.Designer.cs">
       <DependentUpon>CardapioCompletoList.cs</DependentUpon>
     </Compile>
+    <Compile Include="telas\DetalhesPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas\DetalhesPedido.Designer.cs">
+      <DependentUpon>DetalhesPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="telas\ExcluirItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,12 @@
     <Compile Include="telas\MostrarPedidos.Designer.cs">
       <DependentUpon>MostrarPedidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="telas\MostrarPedidosList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas\MostrarPedidosList.Designer.cs">
+      <DependentUpon>MostrarPedidosList.cs</DependentUpon>
+    </Compile>
     <Compile Include="telas\Quantidade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +167,9 @@
     <EmbeddedResource Include="telas\CardapioCompletoList.resx">
       <DependentUpon>CardapioCompletoList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="telas\DetalhesPedido.resx">
+      <DependentUpon>DetalhesPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="telas\ExcluirItem.resx">
       <DependentUpon>ExcluirItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="telas\MostrarPedidos.resx">
       <DependentUpon>MostrarPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telas\MostrarPedidosList.resx">
+      <DependentUpon>MostrarPedidosList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="telas\Quantidade.resx">
       <DependentUpon>Quantidade.cs</DependentUpon>

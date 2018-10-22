@@ -73,7 +73,8 @@ namespace Lanchonete.telas {
         }
 
         private void CadastroItemPedidoButton_Click(object sender, EventArgs e) {
-            CadastroItemPedido janelaCadastroItemPedido = new CadastroItemPedido(int.Parse(codigoPedidoTextBox.Text));
+            int pos = Auxiliar.identificaPosicaoPedido(int.Parse(codigoPedidoTextBox.Text));
+            CadastroItemPedido janelaCadastroItemPedido = new CadastroItemPedido(pos);
             janelaCadastroItemPedido.ShowDialog();
         }
 
@@ -123,11 +124,15 @@ namespace Lanchonete.telas {
         }
 
         private void visualizarPedidoTextButton_Click(object sender, EventArgs e) {
-            MostrarPedidoAtual janelaMostrarPedidoAtual = new MostrarPedidoAtual();
-            janelaMostrarPedidoAtual.ShowDialog();
+            int pos = Auxiliar.identificaPosicaoPedido(int.Parse(codigoPedidoTextBox.Text));
+            DetalhesPedido janelaDetalhesPedido = new DetalhesPedido(pos);
+            janelaDetalhesPedido.ShowDialog();
         }
 
         private void ConfirmarPedidoButton_Click(object sender, EventArgs e) {
+
+            contadorPedidosPendentes.Text = (int.Parse(contadorPedidosPendentes.Text) + 1) + "";
+
             valorPedidoTextBox.Text = "";
             codigoPedidoTextBox.Text = "";
             codigoClienteTextBox.Text = "";
@@ -181,11 +186,15 @@ namespace Lanchonete.telas {
         }
 
         private void nãoEntreguesToolStripMenuItem_Click(object sender, EventArgs e) {
-            MostrarPedidos janelaMostrarPedidos = new MostrarPedidos();
+            //MostrarPedidos janelaMostrarPedidos = new MostrarPedidos();
+            MostrarPedidosList janelaMostrarPedidos = new MostrarPedidosList();
             janelaMostrarPedidos.ShowDialog();
         }
 
         private void CancelarPedidoCadastradoButton_Click(object sender, EventArgs e) {
+
+            contadorPedidosPendentes.Text = (int.Parse(contadorPedidosPendentes.Text) - 1) + "";
+
             int codigo = int.Parse(codigoPedidoAlteracaoTextBox.Text);
             int pos = Program.listaPedidos.FindIndex(x => x.codigo == codigo);
 
@@ -218,8 +227,10 @@ namespace Lanchonete.telas {
 
         private void AlterarPedidoBotao_Click(object sender, EventArgs e) {
 
+            int pos = Auxiliar.identificaPosicaoPedido(int.Parse(codigoPedidoAlteracaoTextBox.Text));
+
             try {
-                Pedido pedidoTeste = Program.listaPedidos[int.Parse(codigoPedidoAlteracaoTextBox.Text)-1];
+                Pedido pedidoTeste = Program.listaPedidos[pos];
                 incluirBotao.Enabled = true;
                 excluirBotao.Enabled = true;
                 ConcluirAlterar.Enabled = true;
@@ -240,12 +251,14 @@ namespace Lanchonete.telas {
         }
 
         private void incluirBotao_Click(object sender, EventArgs e) {
-            CadastroItemPedido janelaCadastroItemPedido = new CadastroItemPedido(int.Parse(codigoPedidoAlteracaoTextBox.Text));
+            int pos = Auxiliar.identificaPosicaoPedido(int.Parse(codigoPedidoAlteracaoTextBox.Text));
+            CadastroItemPedido janelaCadastroItemPedido = new CadastroItemPedido(pos);
             janelaCadastroItemPedido.ShowDialog();
         }
 
         private void excluirBotao_Click(object sender, EventArgs e) {
-            ExcluirItem janelaExcluirItem = new ExcluirItem(int.Parse(codigoPedidoAlteracaoTextBox.Text));
+            int pos = Auxiliar.identificaPosicaoPedido(int.Parse(codigoPedidoAlteracaoTextBox.Text));
+            ExcluirItem janelaExcluirItem = new ExcluirItem(pos);
             janelaExcluirItem.ShowDialog();
         }
     }

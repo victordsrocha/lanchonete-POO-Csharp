@@ -57,7 +57,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.contadorPedidosPendentes = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -67,13 +67,13 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.ConcluirAlterar = new System.Windows.Forms.Button();
+            this.excluirBotao = new System.Windows.Forms.Button();
+            this.incluirBotao = new System.Windows.Forms.Button();
             this.cancelarPedidoCadastradoButton = new System.Windows.Forms.Button();
             this.AlterarPedidoBotao = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.codigoPedidoAlteracaoTextBox = new System.Windows.Forms.TextBox();
-            this.incluirBotao = new System.Windows.Forms.Button();
-            this.excluirBotao = new System.Windows.Forms.Button();
-            this.ConcluirAlterar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -215,14 +215,14 @@
             this.mostrarPedidosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nãoEntreguesToolStripMenuItem});
             this.mostrarPedidosToolStripMenuItem.Name = "mostrarPedidosToolStripMenuItem";
-            this.mostrarPedidosToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.mostrarPedidosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mostrarPedidosToolStripMenuItem.Text = "Mostrar pedidos";
             // 
             // nãoEntreguesToolStripMenuItem
             // 
             this.nãoEntreguesToolStripMenuItem.Name = "nãoEntreguesToolStripMenuItem";
-            this.nãoEntreguesToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.nãoEntreguesToolStripMenuItem.Text = "Não entregues";
+            this.nãoEntreguesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nãoEntreguesToolStripMenuItem.Text = "todos";
             this.nãoEntreguesToolStripMenuItem.Click += new System.EventHandler(this.nãoEntreguesToolStripMenuItem_Click);
             // 
             // groupBox1
@@ -384,7 +384,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.contadorPedidosPendentes);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.Controls.Add(this.label5);
@@ -400,21 +400,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Entregas";
             // 
-            // textBox1
+            // contadorPedidosPendentes
             // 
-            this.textBox1.Location = new System.Drawing.Point(188, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 8;
+            this.contadorPedidosPendentes.Location = new System.Drawing.Point(188, 38);
+            this.contadorPedidosPendentes.Name = "contadorPedidosPendentes";
+            this.contadorPedidosPendentes.ReadOnly = true;
+            this.contadorPedidosPendentes.Size = new System.Drawing.Size(100, 20);
+            this.contadorPedidosPendentes.TabIndex = 8;
+            this.contadorPedidosPendentes.Text = "0";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(48, 45);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(116, 13);
+            this.label7.Size = new System.Drawing.Size(98, 13);
             this.label7.TabIndex = 7;
-            this.label7.Text = "Pedidos não entregues";
+            this.label7.Text = "Pedidos pendentes";
             // 
             // textBox4
             // 
@@ -492,6 +494,39 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Alterar ou cancelar pedidos cadastrados";
             // 
+            // ConcluirAlterar
+            // 
+            this.ConcluirAlterar.Enabled = false;
+            this.ConcluirAlterar.Location = new System.Drawing.Point(22, 121);
+            this.ConcluirAlterar.Name = "ConcluirAlterar";
+            this.ConcluirAlterar.Size = new System.Drawing.Size(299, 23);
+            this.ConcluirAlterar.TabIndex = 6;
+            this.ConcluirAlterar.Text = "Concluir";
+            this.ConcluirAlterar.UseVisualStyleBackColor = true;
+            this.ConcluirAlterar.Click += new System.EventHandler(this.ConcluirAlterar_Click);
+            // 
+            // excluirBotao
+            // 
+            this.excluirBotao.Enabled = false;
+            this.excluirBotao.Location = new System.Drawing.Point(192, 92);
+            this.excluirBotao.Name = "excluirBotao";
+            this.excluirBotao.Size = new System.Drawing.Size(129, 23);
+            this.excluirBotao.TabIndex = 5;
+            this.excluirBotao.Text = "Excluir item";
+            this.excluirBotao.UseVisualStyleBackColor = true;
+            this.excluirBotao.Click += new System.EventHandler(this.excluirBotao_Click);
+            // 
+            // incluirBotao
+            // 
+            this.incluirBotao.Enabled = false;
+            this.incluirBotao.Location = new System.Drawing.Point(22, 92);
+            this.incluirBotao.Name = "incluirBotao";
+            this.incluirBotao.Size = new System.Drawing.Size(129, 23);
+            this.incluirBotao.TabIndex = 4;
+            this.incluirBotao.Text = "Incluir item";
+            this.incluirBotao.UseVisualStyleBackColor = true;
+            this.incluirBotao.Click += new System.EventHandler(this.incluirBotao_Click);
+            // 
             // cancelarPedidoCadastradoButton
             // 
             this.cancelarPedidoCadastradoButton.Location = new System.Drawing.Point(22, 63);
@@ -527,39 +562,6 @@
             this.codigoPedidoAlteracaoTextBox.Name = "codigoPedidoAlteracaoTextBox";
             this.codigoPedidoAlteracaoTextBox.Size = new System.Drawing.Size(100, 20);
             this.codigoPedidoAlteracaoTextBox.TabIndex = 0;
-            // 
-            // incluirBotao
-            // 
-            this.incluirBotao.Enabled = false;
-            this.incluirBotao.Location = new System.Drawing.Point(22, 92);
-            this.incluirBotao.Name = "incluirBotao";
-            this.incluirBotao.Size = new System.Drawing.Size(129, 23);
-            this.incluirBotao.TabIndex = 4;
-            this.incluirBotao.Text = "Incluir item";
-            this.incluirBotao.UseVisualStyleBackColor = true;
-            this.incluirBotao.Click += new System.EventHandler(this.incluirBotao_Click);
-            // 
-            // excluirBotao
-            // 
-            this.excluirBotao.Enabled = false;
-            this.excluirBotao.Location = new System.Drawing.Point(192, 92);
-            this.excluirBotao.Name = "excluirBotao";
-            this.excluirBotao.Size = new System.Drawing.Size(129, 23);
-            this.excluirBotao.TabIndex = 5;
-            this.excluirBotao.Text = "Excluir item";
-            this.excluirBotao.UseVisualStyleBackColor = true;
-            this.excluirBotao.Click += new System.EventHandler(this.excluirBotao_Click);
-            // 
-            // ConcluirAlterar
-            // 
-            this.ConcluirAlterar.Enabled = false;
-            this.ConcluirAlterar.Location = new System.Drawing.Point(22, 121);
-            this.ConcluirAlterar.Name = "ConcluirAlterar";
-            this.ConcluirAlterar.Size = new System.Drawing.Size(299, 23);
-            this.ConcluirAlterar.TabIndex = 6;
-            this.ConcluirAlterar.Text = "Concluir";
-            this.ConcluirAlterar.UseVisualStyleBackColor = true;
-            this.ConcluirAlterar.Click += new System.EventHandler(this.ConcluirAlterar_Click);
             // 
             // Hunger
             // 
@@ -627,7 +629,7 @@
         private System.Windows.Forms.TextBox codigoPedidoTextBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button atualizaValorTextButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox contadorPedidosPendentes;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mostrarPedidosToolStripMenuItem;

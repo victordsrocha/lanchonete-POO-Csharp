@@ -34,6 +34,12 @@ namespace Lanchonete {
             string s = "Pedido " + this.codigo + ":{0}";
             s = s + "Cliente: " + clientePedido.nome + " (cod.: " + clientePedido.codigo + "){0}";
             s = s + "Data: " + dateTimePedido + "{0}{0}";
+            if (this.situacao) {
+                s = s + "Situação: Entregue" +"{0}{0}";
+            }
+            else {
+                s = s + "Situação: Pendente" + "{0}{0}";
+            }
             for (int i = 0; i < itens.Count; i++) {
                 s = s + itens[i].ToString() + "{0}{0}";
             }
