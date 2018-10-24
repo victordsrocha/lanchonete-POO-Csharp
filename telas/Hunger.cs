@@ -361,7 +361,7 @@ namespace Lanchonete.telas {
 
             int pos = Auxiliar.identificaPosicaoPedido(codPedido);
 
-            //pedido é adicionado a lista de pedidos ENTREGUES do dia do entregador
+            //pedido é adicionado a lista de pedidos ENTREGUES do entregador
             Program.listaEntregadores[codEntreg - 1].listaPedidosEntregues.Add(Auxiliar.identificaPedido(codPedido));
 
 
@@ -375,6 +375,10 @@ namespace Lanchonete.telas {
             sucessoRegistrarSituacaoBotao.Enabled = false;
             falhaRegistrarSituacaoBotao.Enabled = false;
             codigoEntregadorRegSituacaoTextBox.Clear();
+
+            //abre a pergunta "pagamento em cheque" passando o objeto pedido como parametro
+            PerguntaCheque janelaPerguntaCheque = new PerguntaCheque(pos);
+            janelaPerguntaCheque.ShowDialog();
         }
 
         private void relatorioToolStripMenuItem_Click(object sender, EventArgs e) {

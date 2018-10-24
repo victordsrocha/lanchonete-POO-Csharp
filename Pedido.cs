@@ -12,6 +12,7 @@ namespace Lanchonete {
         public Cliente clientePedido { get; set; }
         public List<ItemPedido> itens { get; set; }
         public int codigo { get; set; }
+        public Cheque cheque { get; set; }
 
 
         public Pedido(Cliente cliente, DateTime dateTimePedido) {

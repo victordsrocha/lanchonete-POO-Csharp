@@ -51,6 +51,7 @@
     <Compile Include="cardapio\Lanche.cs" />
     <Compile Include="cardapio\Refeicao.cs" />
     <Compile Include="cardapio\Sobremesa.cs" />
+    <Compile Include="Cheque.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Entregador.cs" />
     <Compile Include="ItemCardapio.cs" />
@@ -59,6 +60,12 @@
     <Compile Include="Pedido.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="telas\CadastroCheque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas\CadastroCheque.Designer.cs">
+      <DependentUpon>CadastroCheque.cs</DependentUpon>
+    </Compile>
     <Compile Include="telas\CadastroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,23 +126,17 @@
     <Compile Include="telas\MostrarEntregadores.Designer.cs">
       <DependentUpon>MostrarEntregadores.cs</DependentUpon>
     </Compile>
-    <Compile Include="telas\MostrarPedidoAtual.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="telas\MostrarPedidoAtual.Designer.cs">
-      <DependentUpon>MostrarPedidoAtual.cs</DependentUpon>
-    </Compile>
-    <Compile Include="telas\MostrarPedidos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="telas\MostrarPedidos.Designer.cs">
-      <DependentUpon>MostrarPedidos.cs</DependentUpon>
-    </Compile>
     <Compile Include="telas\MostrarPedidosList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="telas\MostrarPedidosList.Designer.cs">
       <DependentUpon>MostrarPedidosList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telas\PerguntaCheque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas\PerguntaCheque.Designer.cs">
+      <DependentUpon>PerguntaCheque.cs</DependentUpon>
     </Compile>
     <Compile Include="telas\Quantidade.cs">
       <SubType>Form</SubType>
@@ -170,6 +171,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="telas\CadastroCheque.resx">
+      <DependentUpon>CadastroCheque.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="telas\CadastroCliente.resx">
       <DependentUpon>CadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,14 +204,11 @@
     <EmbeddedResource Include="telas\MostrarEntregadores.resx">
       <DependentUpon>MostrarEntregadores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="telas\MostrarPedidoAtual.resx">
-      <DependentUpon>MostrarPedidoAtual.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="telas\MostrarPedidos.resx">
-      <DependentUpon>MostrarPedidos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="telas\MostrarPedidosList.resx">
       <DependentUpon>MostrarPedidosList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telas\PerguntaCheque.resx">
+      <DependentUpon>PerguntaCheque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="telas\Quantidade.resx">
       <DependentUpon>Quantidade.cs</DependentUpon>

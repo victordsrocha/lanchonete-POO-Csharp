@@ -27,6 +27,22 @@ namespace Lanchonete.telas {
                     item.SubItems.Add("pendente");
                 }
                 item.SubItems.Add(pedido.valorTotal().ToString("F2"));
+
+                if (pedido.cheque == null) {
+                    item.SubItems.Add("não");
+                    item.SubItems.Add("-");
+                    item.SubItems.Add("-");
+                    item.SubItems.Add("-");
+                    item.SubItems.Add("-");
+                }
+                else {
+                    item.SubItems.Add("Sim");
+                    item.SubItems.Add(pedido.cheque.numero + "");
+                    item.SubItems.Add(pedido.cheque.conta + "");
+                    item.SubItems.Add(pedido.cheque.agencia + "");
+                    item.SubItems.Add(pedido.cheque.banco);
+                }
+
                 listView.Items.Add(item);
             }
         }

@@ -35,6 +35,11 @@
             this.mostrarDetalheBotao = new System.Windows.Forms.Button();
             this.pendentesBotao = new System.Windows.Forms.Button();
             this.entreguesBotao = new System.Windows.Forms.Button();
+            this.cheque = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.numero = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.conta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.agencia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.banco = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listView
@@ -44,11 +49,16 @@
             this.cliente,
             this.data,
             this.situacao,
-            this.valor});
+            this.valor,
+            this.cheque,
+            this.numero,
+            this.conta,
+            this.agencia,
+            this.banco});
             this.listView.GridLines = true;
             this.listView.Location = new System.Drawing.Point(12, 74);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(776, 364);
+            this.listView.Size = new System.Drawing.Size(1049, 364);
             this.listView.TabIndex = 0;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
@@ -74,6 +84,7 @@
             // valor
             // 
             this.valor.Text = "valor total";
+            this.valor.Width = 81;
             // 
             // todosBotao
             // 
@@ -131,11 +142,36 @@
             this.entreguesBotao.UseVisualStyleBackColor = true;
             this.entreguesBotao.Click += new System.EventHandler(this.entreguesBotao_Click);
             // 
+            // cheque
+            // 
+            this.cheque.Text = "cheque";
+            this.cheque.Width = 75;
+            // 
+            // numero
+            // 
+            this.numero.Text = "numero";
+            this.numero.Width = 76;
+            // 
+            // conta
+            // 
+            this.conta.Text = "conta";
+            this.conta.Width = 71;
+            // 
+            // agencia
+            // 
+            this.agencia.Text = "agencia";
+            this.agencia.Width = 65;
+            // 
+            // banco
+            // 
+            this.banco.Text = "banco";
+            this.banco.Width = 113;
+            // 
             // MostrarPedidosList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1073, 450);
             this.Controls.Add(this.entreguesBotao);
             this.Controls.Add(this.pendentesBotao);
             this.Controls.Add(this.mostrarDetalheBotao);
@@ -165,5 +201,10 @@
         private System.Windows.Forms.Button mostrarDetalheBotao;
         private System.Windows.Forms.Button pendentesBotao;
         private System.Windows.Forms.Button entreguesBotao;
+        private System.Windows.Forms.ColumnHeader cheque;
+        private System.Windows.Forms.ColumnHeader numero;
+        private System.Windows.Forms.ColumnHeader conta;
+        private System.Windows.Forms.ColumnHeader agencia;
+        private System.Windows.Forms.ColumnHeader banco;
     }
 }
