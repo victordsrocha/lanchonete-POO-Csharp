@@ -33,17 +33,21 @@ namespace Lanchonete {
         static void Main() {
             //Clientes cadastrados
             listaClientes.Add(new Cliente(1, "Carl Sagan", "Rua Cosmos", "32645590", "Próximo ao observatório"));
-            listaClientes.Add(new Cliente(2, "Alan Turing", "Rua Enigma", "36529976", "Próximo a base militar"));
-            listaClientes.Add(new Cliente(3, "Machado de Assis", "Rua Dom Casmurro", "32879951", "Próximo a livraria"));
+            listaClientes.Add(new Cliente(2, "Alan Turing", "Rua Enigma", "36529976", "Próximo à base militar"));
+            listaClientes.Add(new Cliente(3, "Machado de Assis", "Rua Dom Casmurro", "32879951", "Próximo à biblioteca"));
+            listaClientes.Add(new Cliente(4, "Rainha Elizabeth", "palácio de buckingham", "31576683", "Próxima ao parlamento"));
+            listaClientes.Add(new Cliente(5, "Seu Madruga", "Apartamento n.72 da vila", "32678841", "Próximo à venda"));
 
             //Entregadores cadastrados
             listaEntregadores.Add(new Entregador(1,"Joao Entregador", "ABC123"));
             listaEntregadores.Add(new Entregador(2, "Maria Entregadora", "XYZ987"));
+            listaEntregadores.Add(new Entregador(3, "Juninho da Entrega", "NJS713"));
 
             //Produtos cadastrados
             listaLanche.Add(new cardapio.Lanche("pastel de queijo", 10.50, 101));
             listaLanche.Add(new cardapio.Lanche("pastel de carne", 12.50, 102));
             listaLanche.Add(new cardapio.Lanche("coxinha de frango", 6.00, 103));
+            listaLanche.Add(new cardapio.Lanche("sanduíche de presunto", 5.00, 104));
 
             listaRefeicao.Add(new cardapio.Refeicao("espaguete carbonara", 21.50, 201));
             listaRefeicao.Add(new cardapio.Refeicao("espaguete bolonheza", 20.00, 202));
