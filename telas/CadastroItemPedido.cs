@@ -19,37 +19,42 @@ namespace Lanchonete.telas {
         }
 
         private void okButton_Click(object sender, EventArgs e) {
-
-            int codigo = int.Parse(codigoTextBox.Text);
-            ItemCardapio instanciaItemCardapio = Auxiliar.identificaItem(codigo);
-
-            int qtd = int.Parse(quantidadeTextBox.Text);
+            try {
+                int codigo = int.Parse(codigoTextBox.Text);
 
 
-            nomeTextBox.Text = instanciaItemCardapio.nome;
-            categoriaTextBox.Text = instanciaItemCardapio.categoria;
-            valorUniTextBox.Text = Convert.ToString(instanciaItemCardapio.preco.ToString("F2"));
-            ValorQtdTextBox.Text = Convert.ToString((instanciaItemCardapio.preco * qtd).ToString("F2"));
-            if (instanciaItemCardapio is cardapio.Bebida) {
-                estoqueTextBox.Text = Convert.ToString(Auxiliar.identificaEstoque(codigo));
-            }
-            else {
-                estoqueTextBox.Text = "-";
-            }
-            
-            if (instanciaItemCardapio is cardapio.Lanche) {
-                categoriaTextBox.Text = "lanche";
-            }
-            else if (instanciaItemCardapio is cardapio.Refeicao) {
-                categoriaTextBox.Text = "refeicao";
-            }
-            else if (instanciaItemCardapio is cardapio.Bebida) {
-                categoriaTextBox.Text = "bebida";
-            }
-            else if (instanciaItemCardapio is cardapio.Sobremesa) {
-                categoriaTextBox.Text = "sobremesa";
-            }
+                ItemCardapio instanciaItemCardapio = Auxiliar.identificaItem(codigo);
 
+                int qtd = int.Parse(quantidadeTextBox.Text);
+
+
+                nomeTextBox.Text = instanciaItemCardapio.nome;
+                categoriaTextBox.Text = instanciaItemCardapio.categoria;
+                valorUniTextBox.Text = Convert.ToString(instanciaItemCardapio.preco.ToString("F2"));
+                ValorQtdTextBox.Text = Convert.ToString((instanciaItemCardapio.preco * qtd).ToString("F2"));
+                if (instanciaItemCardapio is cardapio.Bebida) {
+                    estoqueTextBox.Text = Convert.ToString(Auxiliar.identificaEstoque(codigo));
+                }
+                else {
+                    estoqueTextBox.Text = "-";
+                }
+
+                if (instanciaItemCardapio is cardapio.Lanche) {
+                    categoriaTextBox.Text = "lanche";
+                }
+                else if (instanciaItemCardapio is cardapio.Refeicao) {
+                    categoriaTextBox.Text = "refeicao";
+                }
+                else if (instanciaItemCardapio is cardapio.Bebida) {
+                    categoriaTextBox.Text = "bebida";
+                }
+                else if (instanciaItemCardapio is cardapio.Sobremesa) {
+                    categoriaTextBox.Text = "sobremesa";
+                }
+            }
+            catch {
+                MessageBox.Show("Dados inválidos");
+            }
 
         }
 
@@ -79,6 +84,8 @@ namespace Lanchonete.telas {
                 Program.listaPedidos[pos].itens.Add(instanciaItemPedido);
                 this.Close();
             }
+
+
 
         }
     }
