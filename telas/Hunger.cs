@@ -405,5 +405,10 @@ namespace Lanchonete.telas {
                 dateTimePicker1.Value.Day, dateTimePicker1.Value.Month, dateTimePicker1.Value.Year);
             janelaRelatorioItensVendidos.ShowDialog();
         }
+
+        private void reativarClienteToolStripMenuItem_Click(object sender, EventArgs e) {
+            ReativarCliente janelaReativarCliente = new ReativarCliente();
+            janelaReativarCliente.ShowDialog();
+        }
     }
 }
