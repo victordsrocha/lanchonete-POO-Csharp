@@ -23,11 +23,18 @@ namespace Lanchonete.telas {
         }
 
         private void RelatorioPedidosDoDia_Load(object sender, EventArgs e) {
+
+            //preenche data de hoje
+            dataTextBox.Text = hojeDia + "/" + hojeMes + "/" + hojeAno;
+
             ListViewItem item;
             foreach (Pedido pedido in Program.listaPedidos) {
+
+                //verifica se o pedido é de hoje
                 if (pedido.dateTimePedido.Day == hojeDia &&
                     pedido.dateTimePedido.Month == hojeMes &&
                     pedido.dateTimePedido.Year == hojeAno) {
+
                     item = new ListViewItem(pedido.clientePedido.nome + "");
                     item.SubItems.Add(pedido.clientePedido.telefone);
                     item.SubItems.Add(Auxiliar.data(pedido.dateTimePedido));

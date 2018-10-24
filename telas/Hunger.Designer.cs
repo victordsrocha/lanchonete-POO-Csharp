@@ -82,6 +82,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.codigoPedidoAlteracaoTextBox = new System.Windows.Forms.TextBox();
             this.entregadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.itensVendidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -238,7 +239,8 @@
             // 
             this.relatorioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pedidosDoDiaToolStripMenuItem,
-            this.entregadoresToolStripMenuItem});
+            this.entregadoresToolStripMenuItem,
+            this.itensVendidosToolStripMenuItem});
             this.relatorioToolStripMenuItem.Name = "relatorioToolStripMenuItem";
             this.relatorioToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.relatorioToolStripMenuItem.Text = "Relatorio";
@@ -656,6 +658,13 @@
             this.entregadoresToolStripMenuItem.Text = "Entregadores";
             this.entregadoresToolStripMenuItem.Click += new System.EventHandler(this.entregadoresToolStripMenuItem_Click);
             // 
+            // itensVendidosToolStripMenuItem
+            // 
+            this.itensVendidosToolStripMenuItem.Name = "itensVendidosToolStripMenuItem";
+            this.itensVendidosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.itensVendidosToolStripMenuItem.Text = "Itens vendidos";
+            this.itensVendidosToolStripMenuItem.Click += new System.EventHandler(this.itensVendidosToolStripMenuItem_Click);
+            // 
             // Hunger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -743,5 +752,6 @@
         private System.Windows.Forms.ToolStripMenuItem relatorioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidosDoDiaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entregadoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem itensVendidosToolStripMenuItem;
     }
 }

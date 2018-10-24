@@ -149,6 +149,12 @@
     <Compile Include="telas\RelatorioEntregadores.Designer.cs">
       <DependentUpon>RelatorioEntregadores.cs</DependentUpon>
     </Compile>
+    <Compile Include="telas\RelatorioItensVendidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas\RelatorioItensVendidos.Designer.cs">
+      <DependentUpon>RelatorioItensVendidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="telas\RelatorioPedidosDoDia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="telas\RelatorioEntregadores.resx">
       <DependentUpon>RelatorioEntregadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telas\RelatorioItensVendidos.resx">
+      <DependentUpon>RelatorioItensVendidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="telas\RelatorioPedidosDoDia.resx">
       <DependentUpon>RelatorioPedidosDoDia.cs</DependentUpon>

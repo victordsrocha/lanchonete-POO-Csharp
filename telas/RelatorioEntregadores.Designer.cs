@@ -28,6 +28,8 @@
             this.entregas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.soma = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.comissao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // listView
@@ -38,9 +40,9 @@
             this.soma,
             this.comissao});
             this.listView.GridLines = true;
-            this.listView.Location = new System.Drawing.Point(12, 12);
+            this.listView.Location = new System.Drawing.Point(12, 40);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(776, 426);
+            this.listView.Size = new System.Drawing.Size(776, 398);
             this.listView.TabIndex = 0;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
@@ -63,16 +65,36 @@
             // 
             this.comissao.Text = "comissao";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Relatório de entregas da data:";
+            // 
+            // dataTextBox
+            // 
+            this.dataTextBox.Location = new System.Drawing.Point(168, 11);
+            this.dataTextBox.Name = "dataTextBox";
+            this.dataTextBox.ReadOnly = true;
+            this.dataTextBox.Size = new System.Drawing.Size(157, 20);
+            this.dataTextBox.TabIndex = 2;
+            // 
             // RelatorioEntregadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataTextBox);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.listView);
             this.Name = "RelatorioEntregadores";
             this.Text = "RelatorioEntregadores";
             this.Load += new System.EventHandler(this.RelatorioEntregadores_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -83,5 +105,7 @@
         private System.Windows.Forms.ColumnHeader entregas;
         private System.Windows.Forms.ColumnHeader soma;
         private System.Windows.Forms.ColumnHeader comissao;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox dataTextBox;
     }
 }
