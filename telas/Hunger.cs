@@ -498,5 +498,10 @@ namespace Lanchonete.telas {
             ReativarCliente janelaReativarCliente = new ReativarCliente();
             janelaReativarCliente.ShowDialog();
         }
+
+        private void ajudaToolStripMenuItem_Click(object sender, EventArgs e) {
+            Ajuda janelaAjuda = new Ajuda();
+            janelaAjuda.ShowDialog();
+        }
     }
 }

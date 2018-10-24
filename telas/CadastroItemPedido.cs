@@ -88,6 +88,11 @@ namespace Lanchonete.telas {
 
 
         }
+
+        private void abrirCardapioBotao_Click(object sender, EventArgs e) {
+            CardapioCompletoList janelaCardapio = new CardapioCompletoList();
+            janelaCardapio.ShowDialog();
+        }
     }
 }
 

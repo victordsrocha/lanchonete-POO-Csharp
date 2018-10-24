@@ -35,6 +35,7 @@
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reativarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entregadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarEntregadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarEntregadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,7 +84,7 @@
             this.AlterarPedidoBotao = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.codigoPedidoAlteracaoTextBox = new System.Windows.Forms.TextBox();
-            this.reativarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -97,7 +98,8 @@
             this.clienteToolStripMenuItem,
             this.entregadorToolStripMenuItem,
             this.pedidosToolStripMenuItem,
-            this.relatorioToolStripMenuItem});
+            this.relatorioToolStripMenuItem,
+            this.ajudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -180,16 +182,23 @@
             // cadastrarClienteToolStripMenuItem
             // 
             this.cadastrarClienteToolStripMenuItem.Name = "cadastrarClienteToolStripMenuItem";
-            this.cadastrarClienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarClienteToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.cadastrarClienteToolStripMenuItem.Text = "Cadastrar cliente";
             this.cadastrarClienteToolStripMenuItem.Click += new System.EventHandler(this.cadastrarClienteToolStripMenuItem_Click);
             // 
             // mostrarClientesToolStripMenuItem
             // 
             this.mostrarClientesToolStripMenuItem.Name = "mostrarClientesToolStripMenuItem";
-            this.mostrarClientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mostrarClientesToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.mostrarClientesToolStripMenuItem.Text = "Mostrar clientes";
             this.mostrarClientesToolStripMenuItem.Click += new System.EventHandler(this.mostrarClientesToolStripMenuItem_Click);
+            // 
+            // reativarClienteToolStripMenuItem
+            // 
+            this.reativarClienteToolStripMenuItem.Name = "reativarClienteToolStripMenuItem";
+            this.reativarClienteToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.reativarClienteToolStripMenuItem.Text = "Reativar cliente";
+            this.reativarClienteToolStripMenuItem.Click += new System.EventHandler(this.reativarClienteToolStripMenuItem_Click);
             // 
             // entregadorToolStripMenuItem
             // 
@@ -667,12 +676,12 @@
             this.codigoPedidoAlteracaoTextBox.Size = new System.Drawing.Size(100, 20);
             this.codigoPedidoAlteracaoTextBox.TabIndex = 0;
             // 
-            // reativarClienteToolStripMenuItem
+            // ajudaToolStripMenuItem
             // 
-            this.reativarClienteToolStripMenuItem.Name = "reativarClienteToolStripMenuItem";
-            this.reativarClienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.reativarClienteToolStripMenuItem.Text = "Reativar cliente";
-            this.reativarClienteToolStripMenuItem.Click += new System.EventHandler(this.reativarClienteToolStripMenuItem_Click);
+            this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
+            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.ajudaToolStripMenuItem.Text = "Ajuda";
+            this.ajudaToolStripMenuItem.Click += new System.EventHandler(this.ajudaToolStripMenuItem_Click);
             // 
             // Hunger
             // 
@@ -763,5 +772,6 @@
         private System.Windows.Forms.ToolStripMenuItem entregadoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem itensVendidosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reativarClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
     }
 }

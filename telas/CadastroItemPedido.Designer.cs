@@ -38,11 +38,14 @@
             this.valorUniTextBox = new System.Windows.Forms.TextBox();
             this.estoqueTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.Confirmarbutton = new System.Windows.Forms.Button();
-            this.ValorQtdTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.ValorQtdTextBox = new System.Windows.Forms.TextBox();
+            this.Confirmarbutton = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.abrirCardapioBotao = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -115,6 +118,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.codigoTextBox);
             this.groupBox1.Controls.Add(this.label2);
@@ -182,6 +186,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Confirmação";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(22, 118);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(87, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Valor quantidade";
+            // 
+            // ValorQtdTextBox
+            // 
+            this.ValorQtdTextBox.Location = new System.Drawing.Point(115, 115);
+            this.ValorQtdTextBox.Name = "ValorQtdTextBox";
+            this.ValorQtdTextBox.ReadOnly = true;
+            this.ValorQtdTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ValorQtdTextBox.TabIndex = 15;
+            // 
             // Confirmarbutton
             // 
             this.Confirmarbutton.Location = new System.Drawing.Point(86, 173);
@@ -192,22 +213,25 @@
             this.Confirmarbutton.UseVisualStyleBackColor = true;
             this.Confirmarbutton.Click += new System.EventHandler(this.Confirmarbutton_Click);
             // 
-            // ValorQtdTextBox
+            // groupBox3
             // 
-            this.ValorQtdTextBox.Location = new System.Drawing.Point(115, 115);
-            this.ValorQtdTextBox.Name = "ValorQtdTextBox";
-            this.ValorQtdTextBox.ReadOnly = true;
-            this.ValorQtdTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ValorQtdTextBox.TabIndex = 15;
+            this.groupBox3.Controls.Add(this.abrirCardapioBotao);
+            this.groupBox3.Location = new System.Drawing.Point(6, 188);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(252, 59);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "consulta";
             // 
-            // label7
+            // abrirCardapioBotao
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(22, 118);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 13);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Valor quantidade";
+            this.abrirCardapioBotao.Location = new System.Drawing.Point(6, 22);
+            this.abrirCardapioBotao.Name = "abrirCardapioBotao";
+            this.abrirCardapioBotao.Size = new System.Drawing.Size(240, 23);
+            this.abrirCardapioBotao.TabIndex = 0;
+            this.abrirCardapioBotao.Text = "abrir cardápio";
+            this.abrirCardapioBotao.UseVisualStyleBackColor = true;
+            this.abrirCardapioBotao.Click += new System.EventHandler(this.abrirCardapioBotao_Click);
             // 
             // CadastroItemPedido
             // 
@@ -230,6 +254,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,5 +280,7 @@
         private System.Windows.Forms.Button Confirmarbutton;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox ValorQtdTextBox;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button abrirCardapioBotao;
     }
 }

@@ -58,6 +58,7 @@ namespace Lanchonete {
 
 
 
+            ////////////////
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Lanchonete.telas.Hunger());

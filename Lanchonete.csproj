@@ -59,6 +59,12 @@
     <Compile Include="Pedido.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="telas\Ajuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telas\Ajuda.Designer.cs">
+      <DependentUpon>Ajuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="telas\CadastroCheque.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +182,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="telas\Ajuda.resx">
+      <DependentUpon>Ajuda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="telas\CadastroCheque.resx">
       <DependentUpon>CadastroCheque.cs</DependentUpon>
     </EmbeddedResource>
