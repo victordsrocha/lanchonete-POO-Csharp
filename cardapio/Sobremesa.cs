@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace cardapio {
     class Sobremesa : Lanchonete.ItemCardapio {
-        public string categoria { get; private set; }
         public Sobremesa(string nome, double preco, int codigo) : base(nome, preco, codigo) {
             this.categoria = "sobremesa";
         }

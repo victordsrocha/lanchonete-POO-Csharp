@@ -50,6 +50,7 @@ namespace Lanchonete.telas {
                 item.SubItems.Add(somaValores.ToString("F2"));
                 item.SubItems.Add((0.05 * somaValores).ToString("F2"));
                 listView.Items.Add(item);
+                somaValores = 0;
             }
 
 
