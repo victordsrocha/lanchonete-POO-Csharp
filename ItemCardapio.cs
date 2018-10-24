@@ -10,6 +10,7 @@ namespace Lanchonete {
         public string nome { get; protected set; }
         public double preco { get; protected set; }
         public int codigo { get; set; }
+        //foi preciso criar esse string devido as listas usarem ItemCardapio como tipo
         public string categoria;
 
         public ItemCardapio(string nome, double preco, int codigo) {

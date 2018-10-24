@@ -22,8 +22,8 @@ namespace Lanchonete.telas {
             Pedido pedido = Program.listaPedidos[pos];
             CodigotextBox.Text = pedido.codigo+"";
             DatatextBox.Text = pedido.dateTimePedido + "";
-            NometextBox.Text = pedido.clientePedido.nome;
-            CodigoClientetextBox.Text = pedido.clientePedido.codigo + "";
+            NometextBox.Text = pedido.cliente.nome;
+            CodigoClientetextBox.Text = pedido.cliente.codigo + "";
             ValorTotaltextBox.Text = pedido.valorTotal().ToString("F2");
 
             ListViewItem item;

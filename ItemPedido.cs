@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Lanchonete {
     class ItemPedido {
-        public ItemCardapio item { get; set; }
-        public int qtd { get; set; }
+        public ItemCardapio item { get; private set; }
+        public int qtd { get; private set; }
 
         public ItemPedido(ItemCardapio item, int qtd) {
             this.item = item;

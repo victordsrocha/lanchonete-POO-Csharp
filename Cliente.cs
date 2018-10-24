@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace Lanchonete {
     class Cliente {
 
-        public int codigo { get; set; }
-        public string nome { get; set; }
-        public string endereco { get; set; }
-        public string telefone { get; set; }
-        public string referencia { get; set; }
+        public int codigo { get; private set; }
+        public string nome { get; private set; }
+        public string endereco { get; private set; }
+        public string telefone { get; private set; }
+        public string referencia { get; private set; }
         public bool ativo { get; set; }
         public int devolucoes { get; set; }
 

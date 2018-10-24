@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace Lanchonete {
     class Entregador {
         
-        public int codigo { get; set; }
-        public string nome { get; set; }
-        public string placaDoVeiculo { get; set; }
+        public int codigo { get; private set; }
+        public string nome { get; private set; }
+        public string placaDoVeiculo { get; private set; }
         public bool ocupado { get; set; }
         public int codigoPedidoEntrega { get; set; }
         public List<Pedido> listaPedidosEntregues { get; set; }

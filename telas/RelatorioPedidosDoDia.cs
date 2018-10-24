@@ -35,8 +35,8 @@ namespace Lanchonete.telas {
                     pedido.dateTimePedido.Month == hojeMes &&
                     pedido.dateTimePedido.Year == hojeAno) {
 
-                    item = new ListViewItem(pedido.clientePedido.nome + "");
-                    item.SubItems.Add(pedido.clientePedido.telefone);
+                    item = new ListViewItem(pedido.cliente.nome + "");
+                    item.SubItems.Add(pedido.cliente.telefone);
                     item.SubItems.Add(Auxiliar.data(pedido.dateTimePedido));
                     item.SubItems.Add(Auxiliar.hora(pedido.dateTimePedido));
                     item.SubItems.Add(pedido.valorTotal().ToString("F2"));

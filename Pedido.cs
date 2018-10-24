@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 namespace Lanchonete {
     class Pedido {
 
-        public DateTime dateTimePedido { get; set; }
+        public DateTime dateTimePedido { get; private set; }
         public bool situacao { get; set; }
-        public Cliente clientePedido { get; set; }
+        public Cliente cliente { get; private set; }
         public List<ItemPedido> itens { get; set; }
-        public int codigo { get; set; }
+        public int codigo { get; private set; }
         public Cheque cheque { get; set; }
 
 
         public Pedido(Cliente cliente, DateTime dateTimePedido) {
-            this.clientePedido = cliente;
+            this.cliente = cliente;
             situacao = false;
             this.dateTimePedido = dateTimePedido;
             itens = new List<ItemPedido>();
@@ -33,7 +33,7 @@ namespace Lanchonete {
 
         public override string ToString() {
             string s = "Pedido " + this.codigo + ":{0}";
-            s = s + "Cliente: " + clientePedido.nome + " (cod.: " + clientePedido.codigo + "){0}";
+            s = s + "Cliente: " + cliente.nome + " (cod.: " + cliente.codigo + "){0}";
             s = s + "Data: " + dateTimePedido + "{0}{0}";
             if (this.situacao) {
                 s = s + "Situação: Entregue" +"{0}{0}";

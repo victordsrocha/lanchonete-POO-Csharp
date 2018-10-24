@@ -8,11 +8,11 @@ namespace Lanchonete {
 
     class Cheque {
 
-        public int numero { get; set; }
-        public int conta { get; set; }
-        public int agencia { get; set; }
-        public string banco { get; set; }
-        public Pedido pedido { get; set; }
+        public int numero { get; private set; }
+        public int conta { get; private set; }
+        public int agencia { get; private set; }
+        public string banco { get; private set; }
+        public Pedido pedido { get; private set; }
 
         public Cheque(int numero, int conta, int agencia, string banco, Pedido pedido) {
             this.numero = numero;

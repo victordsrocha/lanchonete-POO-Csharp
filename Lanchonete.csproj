@@ -56,7 +56,6 @@
     <Compile Include="Entregador.cs" />
     <Compile Include="ItemCardapio.cs" />
     <Compile Include="ItemPedido.cs" />
-    <Compile Include="ModelException.cs" />
     <Compile Include="Pedido.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -231,6 +230,7 @@
     <EmbeddedResource Include="telas\RelatorioPedidosDoDia.resx">
       <DependentUpon>RelatorioPedidosDoDia.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
