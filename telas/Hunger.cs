@@ -160,7 +160,7 @@ namespace Lanchonete.telas {
 
             //identifica se o pedido está vazio
             Pedido pedido = Auxiliar.identificaPedido(int.Parse(codigoPedidoTextBox.Text));
-            if (pedido.itens.Count == 0) {
+            if (pedido.listaItensPedidos.Count == 0) {
                 MessageBox.Show("Não é possível criar um pedido vazio");
             }
             else {
@@ -205,10 +205,10 @@ namespace Lanchonete.telas {
             int pos = Program.listaPedidos.Count - 1;
 
             //retornar bebidas para o estoque!
-            for (int i = 0; i < Program.listaPedidos[pos].itens.Count; i++) {
-                if (Program.listaPedidos[pos].itens[i].item is cardapio.Bebida) {
-                    int qtdBebidaRepos = Program.listaPedidos[pos].itens[i].qtd;
-                    int codigoBebidaRepos = Program.listaPedidos[pos].itens[i].item.codigo;
+            for (int i = 0; i < Program.listaPedidos[pos].listaItensPedidos.Count; i++) {
+                if (Program.listaPedidos[pos].listaItensPedidos[i].item is cardapio.Bebida) {
+                    int qtdBebidaRepos = Program.listaPedidos[pos].listaItensPedidos[i].qtd;
+                    int codigoBebidaRepos = Program.listaPedidos[pos].listaItensPedidos[i].item.codigo;
                     int posBebida = Program.listaBebida.FindIndex(x => x.codigo == codigoBebidaRepos);
                     cardapio.Bebida bebida = (cardapio.Bebida)Program.listaBebida[posBebida];
                     bebida.estoque += qtdBebidaRepos;
@@ -242,11 +242,11 @@ namespace Lanchonete.telas {
                     //verifica se o pedido ainda não foi entregue
                     if (!Program.listaPedidos[pos].situacao) {
                         //retornar bebidas para o estoque!
-                        for (int i = 0; i < Program.listaPedidos[pos].itens.Count; i++) {
-                            if (Program.listaPedidos[pos].itens[i].item is cardapio.Bebida) {
-                                string nomeBebidaRepos = Program.listaPedidos[pos].itens[i].item.nome;
-                                int qtdBebidaRepos = Program.listaPedidos[pos].itens[i].qtd;
-                                int codigoBebidaRepos = Program.listaPedidos[pos].itens[i].item.codigo;
+                        for (int i = 0; i < Program.listaPedidos[pos].listaItensPedidos.Count; i++) {
+                            if (Program.listaPedidos[pos].listaItensPedidos[i].item is cardapio.Bebida) {
+                                string nomeBebidaRepos = Program.listaPedidos[pos].listaItensPedidos[i].item.nome;
+                                int qtdBebidaRepos = Program.listaPedidos[pos].listaItensPedidos[i].qtd;
+                                int codigoBebidaRepos = Program.listaPedidos[pos].listaItensPedidos[i].item.codigo;
 
                                 MessageBox.Show(qtdBebidaRepos + " " + nomeBebidaRepos + " voltaram para o estoque!");
 

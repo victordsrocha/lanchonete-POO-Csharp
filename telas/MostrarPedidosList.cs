@@ -19,7 +19,7 @@ namespace Lanchonete.telas {
             foreach (Pedido pedido in Program.listaPedidos) {
                 item = new ListViewItem(pedido.codigo + "");
                 item.SubItems.Add(pedido.cliente.nome);
-                item.SubItems.Add(pedido.dateTimePedido + "");
+                item.SubItems.Add(pedido.data + "");
                 if (pedido.situacao) {
                     item.SubItems.Add("atendido");
                 }
@@ -53,7 +53,7 @@ namespace Lanchonete.telas {
             foreach (Pedido pedido in Program.listaPedidos) {
                 item = new ListViewItem(pedido.codigo + "");
                 item.SubItems.Add(pedido.cliente.nome);
-                item.SubItems.Add(pedido.dateTimePedido + "");
+                item.SubItems.Add(pedido.data + "");
                 if (pedido.situacao) {
                     item.SubItems.Add("atendido");
                 }
@@ -72,7 +72,7 @@ namespace Lanchonete.telas {
                 if (!pedido.situacao) {
                     item = new ListViewItem(pedido.codigo + "");
                     item.SubItems.Add(pedido.cliente.nome);
-                    item.SubItems.Add(pedido.dateTimePedido + "");
+                    item.SubItems.Add(pedido.data + "");
                     if (pedido.situacao) {
                         item.SubItems.Add("atendido");
                     }
@@ -92,7 +92,7 @@ namespace Lanchonete.telas {
                 if (pedido.situacao) {
                     item = new ListViewItem(pedido.codigo + "");
                     item.SubItems.Add(pedido.cliente.nome);
-                    item.SubItems.Add(pedido.dateTimePedido + "");
+                    item.SubItems.Add(pedido.data + "");
                     if (pedido.situacao) {
                         item.SubItems.Add("atendido");
                     }

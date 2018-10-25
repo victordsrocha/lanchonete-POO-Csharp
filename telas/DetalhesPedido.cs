@@ -21,13 +21,13 @@ namespace Lanchonete.telas {
         private void DetalhesPedido_Load(object sender, EventArgs e) {
             Pedido pedido = Program.listaPedidos[pos];
             CodigotextBox.Text = pedido.codigo+"";
-            DatatextBox.Text = pedido.dateTimePedido + "";
+            DatatextBox.Text = pedido.data + "";
             NometextBox.Text = pedido.cliente.nome;
             CodigoClientetextBox.Text = pedido.cliente.codigo + "";
             ValorTotaltextBox.Text = pedido.valorTotal().ToString("F2");
 
             ListViewItem item;
-            foreach (ItemPedido itemPedido in pedido.itens) {
+            foreach (ItemPedido itemPedido in pedido.listaItensPedidos) {
                 item = new ListViewItem(itemPedido.item.codigo + "");
                 item.SubItems.Add(itemPedido.item.nome);
                 item.SubItems.Add(Auxiliar.identificaCategoria(itemPedido.item.codigo));

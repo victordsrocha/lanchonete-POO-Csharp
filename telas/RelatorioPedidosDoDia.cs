@@ -31,14 +31,14 @@ namespace Lanchonete.telas {
             foreach (Pedido pedido in Program.listaPedidos) {
 
                 //verifica se o pedido é de hoje
-                if (pedido.dateTimePedido.Day == hojeDia &&
-                    pedido.dateTimePedido.Month == hojeMes &&
-                    pedido.dateTimePedido.Year == hojeAno) {
+                if (pedido.data.Day == hojeDia &&
+                    pedido.data.Month == hojeMes &&
+                    pedido.data.Year == hojeAno) {
 
                     item = new ListViewItem(pedido.cliente.nome + "");
                     item.SubItems.Add(pedido.cliente.telefone);
-                    item.SubItems.Add(Auxiliar.data(pedido.dateTimePedido));
-                    item.SubItems.Add(Auxiliar.hora(pedido.dateTimePedido));
+                    item.SubItems.Add(Auxiliar.data(pedido.data));
+                    item.SubItems.Add(Auxiliar.hora(pedido.data));
                     item.SubItems.Add(pedido.valorTotal().ToString("F2"));
                     listView.Items.Add(item);
                 }

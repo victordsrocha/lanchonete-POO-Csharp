@@ -37,9 +37,9 @@ namespace Lanchonete.telas {
                 //analisa cada pedido na lista de pedidos ja entregues de cada entregador
                 foreach (Pedido pedido in entregador.listaPedidosEntregues) {
                     //verifica se a entrega é de hoje
-                    if (pedido.dateTimePedido.Day == hojeDia &&
-                    pedido.dateTimePedido.Month == hojeMes &&
-                    pedido.dateTimePedido.Year == hojeAno) {
+                    if (pedido.data.Day == hojeDia &&
+                    pedido.data.Month == hojeMes &&
+                    pedido.data.Year == hojeAno) {
                         //incrementa os valores de qtdEntregasHoje e somaValores
                         qtdEntregasHoje++;
                         somaValores += pedido.valorTotal();

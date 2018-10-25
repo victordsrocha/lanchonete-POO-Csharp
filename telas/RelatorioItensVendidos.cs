@@ -31,13 +31,13 @@ namespace Lanchonete.telas {
             ListViewItem item;
             foreach (Pedido pedido in Program.listaPedidos) {
                 //verifica se o pedido é de hoje
-                if (pedido.dateTimePedido.Day == hojeDia &&
-                    pedido.dateTimePedido.Month == hojeMes &&
-                    pedido.dateTimePedido.Year == hojeAno) {
+                if (pedido.data.Day == hojeDia &&
+                    pedido.data.Month == hojeMes &&
+                    pedido.data.Year == hojeAno) {
                     //verifica se o pedido foi entregue
                     if (pedido.situacao) {
                         //preenche a lista com os vetores [codigo][quantidade]
-                        foreach (ItemPedido itemPedido in pedido.itens) {
+                        foreach (ItemPedido itemPedido in pedido.listaItensPedidos) {
 
                             int codigo = itemPedido.item.codigo;
                             int pos = listaUnidades.FindIndex(x => x[0] == codigo);
